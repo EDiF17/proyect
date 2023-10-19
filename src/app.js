@@ -3,8 +3,9 @@ const path = require('path');
 
 const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/user');
+const pitcsRoutes = require('./routes/products');
 
-const logMiddleware = require('./middlewares/logMiddleware');
+// const logMiddleware = require('./middlewares/logMiddleware');
 
 const app = express();
 
@@ -14,10 +15,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(logMiddleware);
+// app.use(logMiddleware);
 
 app.use('/', mainRoutes);
 app.use('/user', userRoutes);
+app.use('/pitchs', pitchsRoutes);
 
 
 const port = 3000;
