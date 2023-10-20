@@ -3,7 +3,7 @@ const path = require('path');
 
 const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/user');
-const pitcsRoutes = require('./routes/products');
+const pitchsRoutes = require('./routes/pitchs');
 
 // const logMiddleware = require('./middlewares/logMiddleware');
 

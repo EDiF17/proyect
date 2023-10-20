@@ -1,14 +1,26 @@
 const express = require('express');
 
-const pitchsController = require('../controllers/pitchsController');
-
 const router = express.Router();
 
-router.get('/', pitchsController.pitchs);
-
-router.get('/detail', pitchsController.detail);
+const pitchsController = require('../controllers/pitchsController');
 
 
+/*** GET ALL PITCHS ***/ 
+router.get('/', pitchsController.index);
+
+/*** CREATE ONE PITCH ***/
+router.get('/create', pitchsController.create);
+router.post('/', pitchsController.newPitch);
+
+/*** GET ONE PITCH ***/
+router.get('/detail/:id', pitchsController.detail);
+
+/*** EDIT ONE PITCH ***/ 
+router.get('/:id/edit', pitchsController.edit);
+router.put('/:id', pitchsController.update);
+
+/*** DELETE ONE PRODUCT***/ 
+router.delete('/:id', pitchsController.destroy);
 
 
 

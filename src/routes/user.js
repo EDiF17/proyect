@@ -4,6 +4,21 @@ const path = require('path');
 
 const userController = require('../controllers/userController');
 
+const router = express.Router();
+
+router.get('/login', userController.login);
+
+router.get('/register', userController.register); // router.get('/create', userController.create);
+
+router.post('/register', userController.newUser);
+
+
+
+
+module.exports = router;
+
+
+
 // const guestMiddleware = require('../middlewares/guestMiddleware');
 // const { createUserValidation } = require('../middlewares/userValidations');
 
@@ -21,17 +36,6 @@ const userController = require('../controllers/userController');
 // });
 // const upload = multer({ storage });
 
-const router = express.Router();
 
 // router.get('/', guestMiddleware, userController.index);
 // router.post('/create', upload.single('img'), createUserValidation, userController.store);
-
-router.get('/login', userController.login);
-
-router.get('/register', userController.register);
-router.post('/', userController.newUser);
-
-// router.get('/create', userController.create);
-
-
-module.exports = router;

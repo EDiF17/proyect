@@ -1,3 +1,41 @@
+const fs = require('fs');
+const path = require('path');
+const { use } = require('../routes/user');
+
+const usersFilePath = path.join(__dirname, '../data/usersData.json');
+
+function getUsers() {
+    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+    return users;
+}
+
+const controller = {
+    
+    login (req, res) {
+        return res.render('users/login');
+    },
+
+    register (req, res) {
+        return res.render('users/register');
+    },
+
+    newUser (req, res) {
+        const users = getUsers();
+        const user = {
+            id : users[users.length - 1] ? users[users.length - 1].id + 1 : 1,
+            ...req.body,
+            // password: bcrypt.hashSync(req.body.password, 10)
+        };
+        users.push(user);
+        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 4));
+        return res.redirect('/')
+    }
+}
+
+
+module.exports = controller;
+
+
 // const { validationResult } = require('express-validator');
 
 // const controller = {
@@ -18,25 +56,7 @@
 //         return res.send({...req.body, img: req.file.filename});
 //     }
 // };
-const controller = {
-    
-    login (req, res) {
-        return res.render('users/login');
-    },
 
-    register (req, res) {
-        return res.render('users/register');
-    },
-    
-    // create (req, res) {
+  // create (req, res) {
     //     return res.render('users/userCreate');
     // },
-
-    newUser (req, res) {
-        // logica de creacion de usuario 
-    }
-}
-
-
-
-module.exports = controller;
