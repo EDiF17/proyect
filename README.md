@@ -6,17 +6,17 @@ El objetivo de este proyecto es desarrollar un sistema de reservas de canchas de
 
 El sistema tendrá las siguientes características:
 
-##### Reservas de turnos
+##### -Reservas de turnos
 
-##### Torneo interno
+##### -Torneo interno
 
 ## Beneficios
 
 El sistema brindará los siguientes beneficios:
 
-#### Mayor eficiencia
+#### -Mayor eficiencia
 
-#### Mayor participación
+#### -Mayor participación
 
 ## Próximos pasos
 
