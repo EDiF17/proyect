@@ -55,7 +55,7 @@ const controller = {
     edit (req, res) {
         const pitchs = getPitchs();
         const pitch = pitchs.find(element => element.id == req.params.id);
-        return res.render('pitchs/editPitchs', { pitchToEdit : pitch });
+        return res.render('pitchs/editPitchs', { pitchToEdit : pitch }); //Preguntar a los profes
     },
 
     // METHOD TO UPDATE 
