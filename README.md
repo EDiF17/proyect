@@ -14,9 +14,9 @@ El sistema tendrá las siguientes características:
 
 El sistema brindará los siguientes beneficios:
 
-#### -Mayor eficiencia
+#### - Mayor eficiencia
 
-#### -Mayor participación
+#### - Mayor participación
 
 ## Próximos pasos
 
