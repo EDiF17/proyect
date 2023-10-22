@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/login', userController.login);
 
-router.get('/register', userController.register); // router.get('/create', userController.create);
+router.get('/register', userController.register);  // router.get('/create', userController.create);
 
 router.post('/register', userController.newUser);
 

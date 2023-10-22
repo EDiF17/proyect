@@ -1,5 +1,8 @@
-<%- include("partials/head", {styles: ['', ''], title: 'Register'}) %>
+<%- include("../partials/head", {styles: ['', ''], title: 'Register'}) %>
 <body>
+    <!-- Header -->
+    <%- include("../partials/header", { styles: ['', '']}) %>
+    <!-- /Header -->
     <form action="/user/create" method="post" enctype="multipart/form-data">
         <div>
             <input type="text" placeholder="Nombre" name="firstname" value="<%= locals.oldData?.firstname && oldData?.firstname%>">
@@ -20,5 +23,8 @@
             <button type="submit">Enviar</button>
         </div>
     </form>
+    <!-- footer  -->
+    <%- include("../partials/footer"), {styles: ['', '']} %>
+    <!-- /footer -->
 </body>
 </html>
