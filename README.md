@@ -6,22 +6,28 @@ El objetivo de este proyecto es desarrollar un sistema de reservas de canchas de
 
 El sistema tendrá las siguientes características:
 
-##### Reservas de turnos
+- Reservas de turnos de manera ágil para los usuarios.
 
-##### Torneo interno
+- Torneo interno de estimulación, con premios para los equipos participantes. 
 
-## Beneficios
+- Beneficios extras para usuarios frecuentes.
 
-El sistema brindará los siguientes beneficios:
-
-####  Mayor eficiencia
-
-####  Mayor participación
+- Mayor visibilidad y participación para los establecimientos deportivos. 
 
 ## Próximos pasos
 
-El siguiente paso es desarrollar el sistema de reservas de turnos. Una vez que el sistema esté desarrollado, se procederá a implementar el torneo interno.
+Nuestro siguiente paso es desarrollar el sistema de reservas de turnos. Una vez desarrollado, se procederá a implementar el torneo interno.
 
 ## Conclusiones
 
-Este proyecto tiene el potencial de mejorar la experiencia de los usuarios del deporte. El sistema de reservas de turnos simplificará el proceso de reserva, y el torneo interno incentivará la participación de los usuarios.
+Este proyecto tiene el potencial de mejorar la experiencia de los usuarios del deporte. El sistema de reservas de turnos simplificará el proceso de reserva, y el torneo interno incentivará la participación de los usuarios, beneficiando de esta manera, tanto a usuarios finales como a complejos deportivos.
+
+## Nuestro tablero de trabajo 
+
+https://trello.com/b/aTy9QrvO/proyect
+
+## Quienes somos 
+
+Mi nombre es Divo Mustafa Ragu Tengo 30 años. Desde hace años estoy interesado en el area informatica y de desarrollo. Tengo conocimientos en HTML, CSS3 y SASS. Quiero reforzar mi conocimientos y poder aprender mas en el area de programacion Front-End.
+
+Mi nombre es Emilio Di Fulvio, tengo 28 años, y soy oriundo de la localidad de Carreras. Estoy graduado en Higiene y Seguridad, aunque desde hace varios años soy deportista profesional. Me gusta aprender nuevas habilidades continuamente, y desde hace tiempo empecé a incursionar en el área de la programación, sin conocimientos previos. Tengo mucho entusiasmo en poder desarrollar las nuevas habilidades y conocimientos que brinda este curso para lograr ser un desarrollador web.
