@@ -12,6 +12,8 @@ router.get('/register', userController.register);  // router.get('/create', user
 
 router.post('/register', userController.newUser);
 
+router.get('/profile', userController.profile);
+
 
 
 

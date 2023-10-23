@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { use } = require('../routes/user');
+// const { use } = require('../routes/user');
 
 const usersFilePath = path.join(__dirname, '../data/usersData.json');
 
@@ -29,6 +29,10 @@ const controller = {
         users.push(user);
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 4));
         return res.redirect('/')
+    },
+
+    profile (req, res) {
+        res.render('users/profile')
     }
 }
 
