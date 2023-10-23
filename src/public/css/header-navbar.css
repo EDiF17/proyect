@@ -1,0 +1,5 @@
+@import url(varibles.css);
+body{
+    font-family:Montserrat ;
+    background-color: var(--background-color);
+}
