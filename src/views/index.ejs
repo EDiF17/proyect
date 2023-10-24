@@ -1,58 +1,59 @@
-<%- include("partials/head", {styles: ['header-navbar-footer', ''], title: 'Home'}) %>
+<%- include("partials/head", {styles: ['header-navbar-footer', 'index-style'], title: 'Home'}) %>
 <body>
     <%- include("partials/header") %>
-    <h1>Hola Proyects!</h1>
-
+    <!-- <h1>Bienvenido a FUTBOLISMO!</h1> -->
     <div class="banner">
         <img src="" alt="">
-        <div><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui quos ducimus quod ab excepturi</p></div>
+        <h2>FUTBOLISMO</h2>
+        <div><p>La forma mas rápida de reservar tu cancha</p></div>
         <div><a href="/pitchs"><button>Reserva</button></a></div>
     </div>
 
-    <section class="">
-        <div>
-            <i class="fas fa-user-plus"></i>
-            <p>Crea tu cuenta</p>
+    <section class="tarjetRegister">
+        <article>
+            <a href="/user/register"><i class="fas fa-user-plus"></i></a>
+            <a href="/user/register"><h4>Crea tu cuenta</h4></a>
             <p>Si todavia no lo hiciste, registrate y accedé a beneficios exclusivos para tu próximo partido</p>
-        </div>
+        </article>
     </section>
 
-    <section>
-        <div>
-            <i class="fas fa-user-times"></i>
-            <p>Sanción de Jugadores</p>
-            <p>¿Alguien faltó? Hace que reciba una sanción para los próximos encuentros.</p>
-        </div>
-
-        <div>
-            <i class="fas fa-signal"></i>
-            <p>Estadistica por jugador</p>
-            <p>Cuantos mas partidos juegues, mejores beneficios tendrás</p>
-        </div>
-
-        <div>
+    <section class="containerTarjets">
+        <article>
             <i class="fas fa-users"></i>
-            <p>Invitá a tus amigos</p>
+            <h4>Invitá a tus amigos</h4>
             <p>Armá el partido desde la web, e invita tus amigos para que confirmen su asistencia</p>
-        </div>
+        </article>
 
-        <div>
+        <article>
             <i class="far fa-bell"></i>
-            <p>Recordatorio de turnos</p>
+            <h4>Recordatorio de turnos</h4>
             <p>Activá tus notificaciones, y te recordaremos con anticipación todos tus turnos</p>
-        </div>
+        </article>
 
-        <div>
-            <i class="fas fa-futbol"></i>
-            <p>¿Tenes un complejo?</p>
-            <p>Contactate con nuestro equipo, y suma tus instalaciones para recibir a nuestros jugadores</p>
-        </div>
+        <article>
+            <i class="fas fa-signal"></i>
+            <h4>Estadistica personales</h4>
+            <p>Cuantos mas partidos juegues, mejores beneficios tendrás</p>
+        </article>
 
-        <div>
+        <article>
             <i class="fas fa-trophy"></i>
-            <p>Demostrá quien es el mejor de tu ciudad</p>
-            <p>Andá preparando tu equipo para nuestro torneo interno. Te esperan grandes premios!!!</p>
-        </div>
+            <h4>Torneo FUTBOLISMO</h4>
+            <p>Prepará tu equipo y demostrá quien es el mejor de la ciudad.</p>
+        </article>
+
+        <article class="art5">
+            <i class="fas fa-user-times"></i>
+            <h4>Sanción de Jugadores</h4>
+            <p>¿Alguien faltó? Hace que reciba una sanción para los próximos encuentros.</p>
+        </article>
+
+        <article class="art6">
+            <i class="fas fa-futbol"></i>
+            <h4>¿Tenes un complejo?</h4>
+            <p>Suma tus instalaciones para recibir a nuestros jugadores</p>
+        </article>
+        
     </section>
 
 

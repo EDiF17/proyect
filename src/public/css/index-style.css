@@ -1,0 +1,69 @@
+@import url(variables.css);
+
+.banner {
+    width: 100%;
+    height: 250px;
+    text-align: center;
+    border: 2px red solid;
+}
+
+/* .banner img {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+} */
+
+.tarjetRegister{
+    text-align: center;
+    font-size: 14px;
+    margin: 20px;
+}
+
+.tarjetRegister a {
+    text-decoration: none;
+    text-decoration-style: none;
+    color: white;
+}
+
+.containerTarjets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5px;
+}
+.containerTarjets article {
+    width: 40vw;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+article i {
+    font-size: 24px;  
+}
+ /* ¿¿¿ UN COLOR DISTINTO A CADA UNO ??? */
+.fa-user-times{
+    color: tomato;
+}
+.fa-trophy{
+    color: gold;
+}
+.fa-bell{
+    color: yellow;
+}
+.fa-users{
+    color: orangered;
+}
+.fa-signal{
+    color: slategrey;
+}
+
+
+@media (min-width: 780px) {
+
+
+
+}
+
+@media (min-width: 1024px) {
+    
+}

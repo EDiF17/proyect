@@ -1,4 +1,4 @@
-@import url(varibles.css);
+@import url(variables.css);
 body{
     font-family:Montserrat ;
     background-color: var(--background-color);
