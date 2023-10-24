@@ -1,5 +1,14 @@
 :root{
+    /* colores generales */
     --background-color: #35682d;
-    --text-color: ;
+    --oneText-color: #00000000;
+    --secondText-color: #fff;
+    --bgNavBar-color: rgba(0,0,0,0.3);
+    
+    
 
+    /* parametros tarjetas */
+
+    --card-color: ;
+    --spacing-padding: 10px;
 }

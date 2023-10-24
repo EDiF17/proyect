@@ -1,0 +1,120 @@
+@import url(varibles.css);
+body{
+    font-family:Montserrat ;
+    background-color: var(--background-color);
+}
+/* Header */
+.list{
+    display: none;
+}
+.navBar{
+    background-color: var(--bgNavBar-color);
+}
+.buttonLogin{
+    margin-right: 15px;
+    text-wrap: nowrap;
+}
+.navMobile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+.logo img{
+
+    max-width: 10%;
+    max-height: 10%;
+    opacity: 0.9;
+    margin-left: 15px;
+}
+.burgerLogo{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 5px;
+    color: var(--secondText-color);
+}
+
+/* FOOTER */
+footer{
+    background-color: var(--bgNavBar-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.linkInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin: 5px;
+    color: var(--secondText-color);
+}
+
+.linkInfo a{
+    color: var(--secondText-color);
+    text-decoration: none;
+    text-decoration-style: none;
+    font-size: 12px;
+    margin: 5px;
+}
+.socialMedia{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    color: var(--secondText-color);
+    margin: 5px;
+}
+.socialMedia h3{
+    font-size: 17px;
+}
+.socialMedia a{
+    color: var(--secondText-color);
+    text-decoration: none;
+    text-decoration-style: none;
+    font-size: 12px;
+    margin: 5px;
+}
+@media (min-width: 780px) {
+    .logo{
+        display: none;
+    }
+    .burgerMenu{
+        display: none;
+    }
+    .buttonLogin{
+        display: none;
+    }
+    .navBar{
+        color: var(--secondText-color);
+        background-color: var(--bgNavBar-color);
+    }
+    .navBar a{
+        color: var(--secondText-color);
+    text-decoration: none;
+    text-decoration-style: none;
+}
+.list{
+    display: flex;
+    align-items: center;
+}
+.list ul{
+    display: flex;
+    justify-content: end;
+}
+.list ul li{
+    list-style: none;
+    margin: 10px;
+    align-items: start;
+}
+.logoDesktop img{
+    max-width: 10%;
+    max-height: 10%;
+    opacity: 0.9;
+    margin-left: 15px;
+}
+}
+@media (min-width: 1024px) {
+    .list{
+        justify-content: space-between;
+    }
+}
