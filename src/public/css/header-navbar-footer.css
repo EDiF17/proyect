@@ -34,7 +34,12 @@ body{
     margin-top: 5px;
     color: var(--secondText-color);
 }
-
+.buttonLogin a button{
+    background-color: var(--cardIcon-color);
+    color: #000000;
+    border: 0;
+    border-radius: 10px;
+}
 /* FOOTER */
 footer{
     background-color: var(--bgNavBar-color);

@@ -19,18 +19,22 @@
     align-items: center;
     justify-content: space-evenly;
     color: var(--secondText-color);
+    text-shadow: 1px 5px 5px #000000;
+    backdrop-filter: blur(3px)
 }
 
 .tarjetRegister{
     text-align: center;
     font-size: 14px;
     margin: 20px;
+    color: var(--secondText-color);
 }
 
 .tarjetRegister a {
     text-decoration: none;
     text-decoration-style: none;
-    color: #000000;
+    color: var(--secondText-color);
+
 }
 
 .containerTarjets {
@@ -54,6 +58,12 @@
     border-radius: 15px;
     text-wrap: balance;
 }
+.buttonReserv a button{
+    background-color: var(--cardIcon-color);
+    color: #000000;
+    border: 0;
+    border-radius: 10px;
+}
 article i {
     font-size: 24px;
     color: var(--cardIcon-color)
@@ -61,6 +71,9 @@ article i {
 
 
 @media (min-width: 780px) {
+    .textBanner{
+        font-size: 25px;
+    }
     .containerTarjets article {
 
         width: 30%;
@@ -75,11 +88,13 @@ article i {
             /* margin: 20px; */
         }
         article i {
-            font-size: 28px;
+            font-size: 35px;
         }
         .containerTarjets {
             gap: 15px;
-            
+        }
+        .banner{
+            height: 400px;
         }
 }
 
