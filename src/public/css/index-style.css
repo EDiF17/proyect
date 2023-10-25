@@ -4,14 +4,22 @@
     width: 100%;
     height: 250px;
     text-align: center;
-    border: 2px red solid;
+    /* display: flex; */
+    background-image: url('/img/DLT2.webp');
+    background-size: cover;
+    background-position: center;
 }
-
-/* .banner img {
-    width: 100%;
+.banner h2{
+    margin: 0;
+}
+.textBanner{
     height: 100%;
-    z-index: 0;
-} */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--secondText-color);
+}
 
 .tarjetRegister{
     text-align: center;
@@ -22,7 +30,7 @@
 .tarjetRegister a {
     text-decoration: none;
     text-decoration-style: none;
-    color: white;
+    color: #000000;
 }
 
 .containerTarjets {
@@ -30,40 +38,51 @@
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 5px;
+    margin-bottom: 20px;
+
 }
 .containerTarjets article {
-    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+    height: 200px;
     text-align: center;
     font-size: 14px;
     margin-top: 10px;
+    background-color: var(--bgNavBar-color);
+    border-radius: 15px;
+    text-wrap: balance;
 }
 article i {
-    font-size: 24px;  
-}
- /* ¿¿¿ UN COLOR DISTINTO A CADA UNO ??? */
-.fa-user-times{
-    color: tomato;
-}
-.fa-trophy{
-    color: gold;
-}
-.fa-bell{
-    color: yellow;
-}
-.fa-users{
-    color: orangered;
-}
-.fa-signal{
-    color: slategrey;
+    font-size: 24px;
+    color: var(--cardIcon-color)
 }
 
 
 @media (min-width: 780px) {
+    .containerTarjets article {
 
-
-
+        width: 30%;
+        height: 240px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 10px;
+        text-wrap: balance;
+        }
+        .tarjetRegister{
+            font-size: 18px;
+            /* margin: 20px; */
+        }
+        article i {
+            font-size: 28px;
+        }
+        .containerTarjets {
+            gap: 15px;
+            
+        }
 }
 
 @media (min-width: 1024px) {
-    
+
 }
