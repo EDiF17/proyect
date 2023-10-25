@@ -1,6 +1,18 @@
 const express = require('express');
 const path = require('path');
-// const multer = require('multer');
+
+const multer = require('multer');
+const storage = multer.diskStorage({
+    detination : (req, file, cb) =>  {
+        cb(null, path.join(__dirname, '../public/img/pitchs'));
+    },
+    filename : (req, file, cb) => {
+        let imageName = Date.now() + path.extname(file.originalname);
+        cb(null, imageName);
+    }
+});
+
+const upload = multer({ storage : storage });
 
 const userController = require('../controllers/userController');
 
@@ -10,7 +22,7 @@ router.get('/login', userController.login);
 
 router.get('/register', userController.register);  // router.get('/create', userController.create);
 
-router.post('/register', userController.newUser);
+router.post('/register', upload.single('img'), userController.newUser);
 
 router.get('/profile', userController.profile);
 
