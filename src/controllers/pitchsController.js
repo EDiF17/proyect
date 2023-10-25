@@ -25,34 +25,34 @@ const controller = {
         const pitchs = getPitchs();
         const pitchsToCreate = {
             id : pitchs[pitchs.length - 1].id + 1,
-            // image: SUBIR UNA IMAGEN POR DEFAULT 
+            img: 'cancha-prueba.webp', 
             ... req.body
         };
 
         pitchs.push(pitchsToCreate);
         fs.writeFileSync(pitchsFilePath, JSON.stringify(pitchs, null, 2));
-        res.redirect('/');
+        res.redirect('/pitchs');
     },
     
     // DETAIL FROM ONE PITCH 
-    // detail (req, res) {
-    //     const pitchs = getPitchs();
-    //     const pitch = pitchs.find(element => element.id == req.params.id);
-    //     if (!pitch){
-    //         return res.render('error', {    // CREAR VISTA EJS DE ERROR //
-    //             message : 'La cancha no existe', 
-    //             error : {
-    //                 status : 404
-    //             },
-    //             path: req.url
-    //         });
-    //     }
+    detail (req, res) {
+        const pitchs = getPitchs();
+        const pitch = pitchs.find(element => element.id == req.params.id);
+            if (!pitch){
+                return res.render('error', {    // CREAR VISTA EJS DE ERROR //
+                    message : 'La cancha no existe', 
+                        error : {
+                            status : 404
+                },
+                path: req.url
+            });
+        }
         
-    //     res.render('pitchs/detail', { pitch });
-    // },
-    detail (req, res){
-        res.render('pitchs/detail')
+        res.render('pitchs/detail', { pitch });
     },
+    // detail (req, res){
+    //     res.render('pitchs/detail')
+    // },
 
     // FORM TO EDIT 
     edit (req, res) {
@@ -70,7 +70,7 @@ const controller = {
             ...req.body
         };
         fs.writeFileSync(pitchsFilePath, JSON.stringify(pitchs, null, 2));
-        res.redirect('/')
+        res.redirect('/pitchs')
     },
 
     destroy (req, res) {
@@ -78,7 +78,7 @@ const controller = {
         const pitchIndex = pitchs.findIndex(element => element.id == req.params.id);
         pitchs.splice(pitchIndex, 1);
         fs.writeFileSync(pitchsFilePath, JSON.stringify(pitchs, null, 2));
-        res.redirect('/');
+        res.redirect('/pitchs');
     }
 
 }

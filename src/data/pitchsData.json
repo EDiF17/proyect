@@ -1,41 +1,12 @@
 [
-  {
-    "id": "",
-    "name": "",
-    "location": "",
-    "category": "",
-    "time": "",
-    "description": "",
-    "price": "",
-    "img": ""
-  },
-  {
-    "id": "",
-    "name": "",
-    "location": "",
-    "category": "",
-    "time": "",
-    "description": "",
-    "price": "",
-    "img": ""
-  },
-  {
-    "id": "",
-    "name": "",
-    "location": "",
-    "category": "",
-    "time": "",
-    "description": "",
-    "price": "",
-    "img": ""
-  },
-  {
+{
     "id": "1",
-    "name": "",
-    "location": "",
-    "time": "",
-    "description": "",
-    "price": "",
-    "img": ""
-  }
+    "name": "Marote",
+    "description": "La mejor cancha de la cuadra",
+    "time": "10 a.m. - 00 a.m.",
+    "location": "Chivilcoy 1012",
+    "category": "centro",
+    "price": "2200",
+    "img": "cancha-prueba.webp"
+}
 ]

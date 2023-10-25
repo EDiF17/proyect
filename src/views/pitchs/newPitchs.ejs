@@ -1,46 +1,46 @@
-<%- include("../partials/head", {styles: ['header-navbar-footer', 'pitchs-style', 'user-style'], title: 'New pitchs'}) %>
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'pitchs-style'], title: 'New pitchs'}) %>
 <body>
 
     <!-- header  -->
-    <%- include("../partials/header") %>
+    <%- include("../partials/header"), {styles: ['', '']} %>
     <!-- /header -->
 
     <main>
         <form action="/pitchs" method="POST">
             <div>
-                <label for="name">Nombre de la sede</label><br>
+                <label for="name">Nombre de la sede</label>
                 <input type="text" id="name" name="name">
             </div>
 
             <!-- UBICACION EXACTA  -->
             <div>
-                <label for="location">Ubicacion</label><br>
+                <label for="location">Ubicacion</label>
                 <input type="text" id="location" name="location">
             </div>
             
             <!-- UBICACION POR ZONAS /// SE PODRIA APLICAR PARA MOSTRAR ZONAS DE PREFERENCIA AL USUARIO  -->
 
-            <!-- <label for="category">Zona de la ciudad</label>
+            <label for="category">Zona de la ciudad</label>
             <select name="category" id="category">
                 <option value="centro">Centro</option>
                 <option value="norte">Norte</option>
                 <option value="sur">Sur</option>
-            </select> -->
+            </select>
 
             <div>
-                <label for="time">Horarios</label><br>
+                <label for="time">Horarios</label>
                 <input type="text" id="time" name="time">
             </div>
             <div>
-                <label for="description">Descripcion</label><br>
+                <label for="description">Descripcion</label>
                 <textarea name="description" id="description"></textarea>
             </div>
             <div>
-                <label for="price">Precio por hora</label><br>
+                <label for="price">Precio por hora</label>
                 <input type="text" id="price" name="price">
             </div>
             <div>
-                <label for="img">Imagen de Portada</label><br>
+                <label for="img">Imagen de Portada</label>
                 <input type="file" name="img" id="img">
             </div>
             <div>
@@ -51,7 +51,7 @@
     </main>
 
     <!-- footer  -->
-    <%- include("../partials/footer") %>
+    <%- include("../partials/footer"), {styles: ['', '']} %>
     <!-- /footer -->
 
 </body>

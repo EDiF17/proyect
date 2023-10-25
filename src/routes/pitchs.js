@@ -13,9 +13,9 @@ router.get('/create', pitchsController.create);
 router.post('/', pitchsController.newPitch);
 
 /*** GET ONE PITCH ***/
-// router.get('/detail/:id', pitchsController.detail);
+router.get('/detail/:id', pitchsController.detail);
 
-router.get('/detail/', pitchsController.detail);
+// router.get('/detail/', pitchsController.detail);
 
 /*** EDIT ONE PITCH ***/ 
 router.get('/:id/edit', pitchsController.edit);

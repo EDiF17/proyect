@@ -2,21 +2,17 @@
 
 <body>
     <%- include("../partials/header") %>
-    <div>
-        <h2>detalle de la sede</h2>
-    </div>
-
-    <div>
-        <p>imagen principal de la sede</p>
-        <img src="" alt="">
-    </div>
-    <div>
-        <p>nombre</p>
-    </div>
-    <div>
-        <p>descripcion</p>
-    </div>
-    <div>
+    <article>
+        <div>
+            <h2><%= locals.pitch && pitch.name %></h2>
+        </div>
+        <div>
+            <img src="/img/<%= locals.pitch && pitch.img %>" alt="pitch-img">
+        </div>
+        <div>
+            <p><%= locals.pitch && pitch.description %></p>
+        </div>
+    </article>
         <label for="">Fecha</label>
         <select name="" id="">
             <option value=""></option>
@@ -37,8 +33,15 @@
         </select>
     </div>
     <div>
-        <button>reservar</button>
+        <a href=""><button>reservar</button></a>
     </div>
+
+    <div>
+    <a href="/pitchs/<%= pitch.id %>/edit" class="">EDITAR PRODUCTO</a>
+    <form action="/pitchs/<%= pitch.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+        <button type="submit" class="">ELIMINAR</button>
+    </div>
+
     <%- include("../partials/footer") %>
 </body>
 </html>

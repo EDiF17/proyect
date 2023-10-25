@@ -8,30 +8,25 @@
 
 
     <div>
-        <h2>TODAS NUESTAS SEDES</h2>
+        <h2>ELEGÍ TU SEDE</h2>
     </div>
 
-    <section class="sectionPitchs">
-        <div>
-            <p>imagen de la cancha</p>
-            <img src="/img/cancha-prueba.webp" alt="">
-        </div>
-        <div>
-            <p>nombre de la cancha</p>
-            <input type="text" name="" id="">
-        </div>
-        <div>
-            <p>direccion</p>
-            <input type="text" name="" id="">
-        </div>
-        <div>
-            <p>Zona</p>
-            <input type="text" name="" id="">
-        </div>
-        <div>
-            <a href="/pitch/detail"><p>Ver mas</p></a>
-        </div>
+    <% locals.pitchs && pitchs.forEach(pitch => { %>
+    <section class="">
+        <a href="/pitchs/detail/<%= pitch.id %>">
+        <article class="">
+            <div><img src="/img/<%= pitch.img %>" alt=""></div>
+            <div>
+                <h2><%=  pitch.name %></h2>
+                <p><%=  pitch.description %></p>
+            </div>
+            <div>               
+                <P><%=  pitch.location %></P>
+                <p><%=  pitch.time %></p>
+            </div>
+        </a>
     </section>
+    <% }) %>
 
 </main>
     <!-- footer  -->
