@@ -1,20 +1,20 @@
-<%- include("../partials/head", {styles: ['', ''], title: 'New pitchs'}) %>
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'pitchs-style', 'user-style'], title: 'New pitchs'}) %>
 <body>
 
     <!-- header  -->
-    <%- include("../partials/header"), {styles: ['', '']} %>
+    <%- include("../partials/header") %>
     <!-- /header -->
 
     <main>
         <form action="/pitchs" method="POST">
             <div>
-                <label for="name">Nombre de la sede</label>
+                <label for="name">Nombre de la sede</label><br>
                 <input type="text" id="name" name="name">
             </div>
 
             <!-- UBICACION EXACTA  -->
             <div>
-                <label for="location">Ubicacion</label>
+                <label for="location">Ubicacion</label><br>
                 <input type="text" id="location" name="location">
             </div>
             
@@ -28,19 +28,19 @@
             </select> -->
 
             <div>
-                <label for="time">Horarios</label>
+                <label for="time">Horarios</label><br>
                 <input type="text" id="time" name="time">
             </div>
             <div>
-                <label for="description">Descripcion</label>
+                <label for="description">Descripcion</label><br>
                 <textarea name="description" id="description"></textarea>
             </div>
             <div>
-                <label for="price">Precio por hora</label>
+                <label for="price">Precio por hora</label><br>
                 <input type="text" id="price" name="price">
             </div>
             <div>
-                <label for="img">Imagen de Portada</label>
+                <label for="img">Imagen de Portada</label><br>
                 <input type="file" name="img" id="img">
             </div>
             <div>
@@ -51,7 +51,7 @@
     </main>
 
     <!-- footer  -->
-    <%- include("../partials/footer"), {styles: ['', '']} %>
+    <%- include("../partials/footer") %>
     <!-- /footer -->
 
 </body>

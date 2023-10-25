@@ -35,20 +35,23 @@ const controller = {
     },
     
     // DETAIL FROM ONE PITCH 
-    detail (req, res) {
-        const pitchs = getPitchs();
-        const pitch = pitchs.find(element => element.id == req.params.id);
-        if (!pitch){
-            return res.render('error', {    // CREAR VISTA EJS DE ERROR //
-                message : 'La cancha no existe', 
-                error : {
-                    status : 404
-                },
-                path: req.url
-            });
-        }
+    // detail (req, res) {
+    //     const pitchs = getPitchs();
+    //     const pitch = pitchs.find(element => element.id == req.params.id);
+    //     if (!pitch){
+    //         return res.render('error', {    // CREAR VISTA EJS DE ERROR //
+    //             message : 'La cancha no existe', 
+    //             error : {
+    //                 status : 404
+    //             },
+    //             path: req.url
+    //         });
+    //     }
         
-        res.render('pitchs/detail', { pitch });
+    //     res.render('pitchs/detail', { pitch });
+    // },
+    detail (req, res){
+        res.render('pitchs/detail')
     },
 
     // FORM TO EDIT 

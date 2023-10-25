@@ -1,0 +1,28 @@
+@import url(variables.css);
+.sectionPitchs div img{
+    width: 100%;
+}
+.sectionPitchs{
+    display: flex;
+    flex-direction: column;
+}
+.sectionPitchs div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+.sectionPitchs div input{
+    width: 200px;
+}
+
+@media (min-width:768px) {
+    .sectionPitchs div input{
+        width: 300px;
+    }
+    .sectionPitchs div img{
+        height: 200px;
+        object-fit: cover;
+    }
+}

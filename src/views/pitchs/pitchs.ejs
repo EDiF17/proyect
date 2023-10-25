@@ -1,9 +1,9 @@
-<%- include("../partials/head", {styles: ['header-navbar-footer', ''], title: 'Pitchs'}) %>
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'pitchs-style'], title: 'Pitchs'}) %>
 
 <body>
     <main>
     <!-- Header -->
-    <%- include("../partials/header", { styles: ['', '']}) %>
+    <%- include("../partials/header") %>
     <!-- /Header -->
 
 
@@ -11,28 +11,31 @@
         <h2>TODAS NUESTAS SEDES</h2>
     </div>
 
-    <section>
+    <section class="sectionPitchs">
         <div>
             <p>imagen de la cancha</p>
-            <img src="" alt="">
+            <img src="/img/cancha-prueba.webp" alt="">
         </div>
         <div>
             <p>nombre de la cancha</p>
+            <input type="text" name="" id="">
         </div>
         <div>
             <p>direccion</p>
+            <input type="text" name="" id="">
         </div>
         <div>
             <p>Zona</p>
+            <input type="text" name="" id="">
         </div>
         <div>
-            <a href="/pitch/detail"><p>ver mas</p></a>
+            <a href="/pitch/detail"><p>Ver mas</p></a>
         </div>
     </section>
 
 </main>
     <!-- footer  -->
-    <%- include("../partials/footer"), {styles: ['', '']} %>
+    <%- include("../partials/footer") %>
     <!-- /footer -->
 </body>
 

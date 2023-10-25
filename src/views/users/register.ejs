@@ -1,82 +1,84 @@
-<%- include("../partials/head", {styles: ['header-navbar-footer', ''], title: 'Register'}) %>
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'user-style'], title: 'Register'}) %>
+
 <body>
     <main>
-    <!-- Header -->
-    <%- include("../partials/header", { styles: ['', '']}) %>
-    <!-- /Header -->
+        <!-- Header -->
+        <%- include("../partials/header") %>
+        <!-- /Header -->
 
+        <div class="mainForm">
+            <div>
+                <h3>Formá parte de nuestra comunidad y competí contra tus amigos</h3>
+            </div>
 
-    <div>
-        <h2>Formá parte de nuestra comunidad y competí contra tus amigos</h2>
-    </div>
-
-    <div class="">
-        <form action="/user/register" method="POST" enctype="multipart/form-data" class="">Creá tu cuenta</form>
-        <div>
-        <label for="firstName">Nombre</label>
-        <input type="text" id="name" name="name" placeholder="">
-    </div>
-    <div>
-        <label for="lastName">Apellido</label>
-        <input type="text" id="lastName" name="lastName" placeholder="">
-    </div>
-    <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="">
-    </div>
-    <div>
-        <label for="phone">Número de contacto</label>
-        <input type="number" id="phone" name="phone" placeholder="">
-    </div>
-    <div>
-        <label for="location">Ubicación</label>
-        <input type="text" id="location" name="location" placeholder="">
-    </div>
-    <div>
-        <label for="zone">Zona</label>
-        <select name="zone" id="">
-            <option value="center">Centro</option>
-            <option value="south">Sur</option>
-            <option value="north">Norte</option>
-        </select>
-    </div>
-    <div>
-        <label for="position">Posicion</label>
-        <select name="position" id="">
-            <option value="goalkeeper">Arquero</option>
-            <option value="defender">Defensor</option>
-            <option value="forward">Delantero</option>
-        </select>
-    </div>
-    <!-- <div>
+                <form action="/user/register" method="POST" enctype="multipart/form-data" class="">
+                    <h4>Creá tu cuenta</h4>
+                <div>
+                    <label for="firstName">Nombre</label><br>
+                    <input type="text" id="name" name="name" placeholder="">
+                </div>
+                <div>
+                    <label for="lastName">Apellido</label><br>
+                    <input type="text" id="lastName" name="lastName" placeholder="">
+                </div>
+                <div>
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" placeholder="">
+                </div>
+                <div>
+                    <label for="phone">Número de contacto</label><br>
+                    <input type="number" id="phone" name="phone" placeholder="">
+                </div>
+                <div>
+                    <label for="location">Ubicación</label><br>
+                    <input type="text" id="location" name="location" placeholder="">
+                </div>
+                <div>
+                    <label for="zone">Zona</label>
+                    <select name="zone" id="">
+                        <option value="center">Centro</option>
+                        <option value="south">Sur</option>
+                        <option value="north">Norte</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="position">Posicion</label>
+                    <select name="position" id="">
+                        <option value="goalkeeper">Arquero</option>
+                        <option value="defender">Defensor</option>
+                        <option value="forward">Delantero</option>
+                    </select>
+                </div>
+                <!-- <div>
         <label for="">Habilidad destacada</label>
         <select name="" id="">
             <option value=""></option>
         </select>
     </div> -->
-    <div>
-        <label for="imgPerfil">Imagen de perfil</label>
-        <input type="file" name="imgPerfil" id="imgPerfil">
-    </div>
-    <div>
-        <label for="password">Contraseña</label>
+                <div class="imgField">
+                    <label for="imgPerfil">Imagen de perfil</label><br>
+                    
+                    <input type="file" name="imgPerfil" id="imgPerfil">
+                
+                </div>
+                <div>
+                    <label for="password">Contraseña</label><br>
+                    <input type="password" id="password" name="password" placeholder="">
+                </div>
+                <div>
+        <label for="password">Repetir contraseña</label><br>
         <input type="password" id="password" name="password" placeholder="">
     </div>
-    <!-- <div>
-        <label for="password">Repetir contraseña</label>
-        <input type="password" id="password" name="password" placeholder="">
-    </div> -->
-    <div>
-        <button type="reset" id="reset">Borrar</button>
-        <button type="submit" id="submit">Enviar</button>
-    </div>
-
-    </div>
-
-</main>
+                <div>
+                    <button type="reset" id="reset">Borrar</button>
+                    <button type="submit" id="submit">Enviar</button>
+                </div>
+        </div>
+    </form>
+    </main>
     <!-- footer  -->
-    <%- include("../partials/footer"), {styles: ['', '']} %>
+    <%- include("../partials/footer") %>
     <!-- /footer -->
 </body>
-</html>
 
+</html>

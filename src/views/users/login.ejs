@@ -1,4 +1,4 @@
-<%- include("../partials/head", {styles: ['header-navbar-footer', ''], title: 'Login'}) %>
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'user-style'], title: 'Login'}) %>
 <body>
     <main>
     <!-- Header -->
@@ -7,17 +7,17 @@
 
 
     <div>
-        <h2>inicia sesion</h2>
+        <h2>Inicia sesion</h2>
     </div>
 
-    <div>
-        <form action="/">Ingresá</form>
+        <form action="/">
+            <h3>Ingresá</h3>
         <div>
-            <label for="name">Usuario</label>
+            <label for="name">Usuario</label><br>
             <input type="text" name="name" id="name">
         </div>
         <div>
-            <label for="password">Contraseña</label>
+            <label for="password">Contraseña</label><br>
             <input type="password" name="password" id="password">
         </div>
 
@@ -25,11 +25,11 @@
             <a href="/user/register"><button type="submit" id="">Creá tu cuenta</button></a>
             <button type="submit" id="submit">Enviar</button>
         </div>
-    </div>
+    </form>
 
 </main>
     <!-- footer  -->
-    <%- include("../partials/footer"), {styles: ['', '']} %>
+    <%- include("../partials/footer")%>
     <!-- /footer -->
 </body>
 </html>
