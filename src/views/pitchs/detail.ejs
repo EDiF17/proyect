@@ -7,7 +7,7 @@
             <h2><%= locals.pitch && pitch.name %></h2>
         </div>
         <div>
-            <img src="/img/<%= locals.pitch && pitch.img %>" alt="pitch-img">
+            <img src="/img/pitchs/<%= locals.pitch && pitch.img %>" alt="pitch-img">
         </div>
         <div>
             <p><%= locals.pitch && pitch.description %></p>
@@ -37,7 +37,7 @@
     </div>
 
     <div>
-    <a href="/pitchs/<%= pitch.id %>/edit" class="">EDITAR PRODUCTO</a>
+    <a href="/pitchs/edit/<%= pitch.id %>" class="">EDITAR PRODUCTO</a>
     <form action="/pitchs/<%= pitch.id %>?_method=DELETE" method="POST" style="display: inline-flex">
         <button type="submit" class="">ELIMINAR</button>
     </div>

@@ -6,7 +6,57 @@
     "time": "10 a.m. - 00 a.m.",
     "location": "Chivilcoy 1012",
     "category": "centro",
-    "price": "2200",
+    "price": 2200,
     "img": "cancha-prueba.webp"
+  },
+  {
+    "id": 2,
+    "img": "pitch-1698335483966.png",
+    "name": "holaa",
+    "location": "asdas",
+    "category": "centro",
+    "time": "sad",
+    "description": "asd",
+    "price": "122"
+  },
+  {
+    "id": 3,
+    "img": "cancha-prueba.webp",
+    "name": "qwe",
+    "location": "qwe",
+    "category": "centro",
+    "time": "qwe",
+    "description": "eqw",
+    "price": "qwe"
+  },
+  {
+    "id": 4,
+    "img": "cancha-prueba.webp",
+    "name": "asdas",
+    "location": "asdas",
+    "category": "centro",
+    "time": "asdas",
+    "description": "adsdas",
+    "price": "asd"
+  },
+  {
+    "id": 5,
+    "img": "cancha-prueba.webp",
+    "name": "asd",
+    "location": "czx",
+    "category": "norte",
+    "time": "zxc",
+    "description": "wqe",
+    "price": "qwe"
+  },
+  {
+    "id": 6,
+    "img": "cancha-prueba.webp",
+    "name": "qwe",
+    "location": "qew",
+    "category": "centro",
+    "time": "qweqw",
+    "description": "qew",
+    "price": "qwe"
   }
 ]

@@ -32,8 +32,9 @@ router.get('/detail/:id', pitchsController.detail);
 // router.get('/detail/', pitchsController.detail);
 
 /*** EDIT ONE PITCH ***/ 
-router.get('/:id/edit', pitchsController.edit);
-router.put('/:id', pitchsController.update);
+router.get('/edit/:id', pitchsController.edit);
+router.put('/:id', upload.single('img'), pitchsController.update);
+
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/:id', pitchsController.destroy);

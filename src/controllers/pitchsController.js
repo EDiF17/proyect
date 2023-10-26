@@ -12,7 +12,8 @@ const controller = {
     
     // SHOW ALL PITCHS 
     index (req, res) {
-        return res.render('pitchs/pitchs', { pitchs : getPitchs() });
+        const pitchs = getPitchs();
+        return res.render('pitchs/pitchs', { pitchs });
     },
     
     // FORM TO CREATE PITCH 
@@ -23,9 +24,10 @@ const controller = {
     // METHOD TO NEW PITCH 
     newPitch (req, res) {
         const pitchs = getPitchs();
+        // const img = req.file.filename || 'cancha-prueba.webp'
         const pitchsToCreate = {
             id : pitchs[pitchs.length - 1].id + 1,
-            img: req.file.img || 'cancha-prueba.webp', 
+            img: req.file?.filename || 'cancha-prueba.webp', 
             ...req.body
         };
         
@@ -63,8 +65,10 @@ const controller = {
     update (req, res) {
         const pitchs = getPitchs();
         const pitchIndex = pitchs.findIndex(element => element.id == req.params.id);
+        const img = req.file?.filename || pitchs[pitchIndex].img;
         pitchs[pitchIndex] = {
             ...pitchs[pitchIndex],   
+            img,
             ...req.body
         };
         fs.writeFileSync(pitchsFilePath, JSON.stringify(pitchs, null, 2));
