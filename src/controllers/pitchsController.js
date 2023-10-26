@@ -25,10 +25,11 @@ const controller = {
         const pitchs = getPitchs();
         const pitchsToCreate = {
             id : pitchs[pitchs.length - 1].id + 1,
-            img: 'cancha-prueba.webp', 
-            ... req.body
+            img: req.file.img || 'cancha-prueba.webp', 
+            ...req.body
         };
-
+        
+        console.log(pitchsToCreate)
         pitchs.push(pitchsToCreate);
         fs.writeFileSync(pitchsFilePath, JSON.stringify(pitchs, null, 2));
         res.redirect('/pitchs');
@@ -50,15 +51,12 @@ const controller = {
         
         res.render('pitchs/detail', { pitch });
     },
-    // detail (req, res){
-    //     res.render('pitchs/detail')
-    // },
 
     // FORM TO EDIT 
     edit (req, res) {
         const pitchs = getPitchs();
         const pitch = pitchs.find(element => element.id == req.params.id);
-        return res.render('pitchs/editPitchs', { pitchToEdit : pitch }); //Preguntar a los profes
+        return res.render('pitchs/editPitchs', { pitchToEdit : pitch }); 
     },
 
     // METHOD TO UPDATE 
@@ -66,7 +64,7 @@ const controller = {
         const pitchs = getPitchs();
         const pitchIndex = pitchs.findIndex(element => element.id == req.params.id);
         pitchs[pitchIndex] = {
-            ...pitchs[pitchIndex],   // CONSULTAR //
+            ...pitchs[pitchIndex],   
             ...req.body
         };
         fs.writeFileSync(pitchsFilePath, JSON.stringify(pitchs, null, 2));

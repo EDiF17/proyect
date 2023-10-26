@@ -1,8 +1,20 @@
 const express = require('express');
+const path = require('path');
 
 const router = express.Router();
 
 const multer = require('multer');
+const storage = multer.diskStorage({
+    destination : (req, file, cb) =>  {
+        cb(null, path.join(__dirname, '../public/img/pitchs'));
+    },
+    filename : (req, file, cb) => {
+        let imageName = 'pitch-' + Date.now() + path.extname(file.originalname);
+        cb(null, imageName);
+    }
+});
+
+const upload = multer({ storage });
 
 const pitchsController = require('../controllers/pitchsController');
 
@@ -12,7 +24,7 @@ router.get('/', pitchsController.index);
 
 /*** CREATE ONE PITCH ***/
 router.get('/create', pitchsController.create);
-router.post('/', pitchsController.newPitch);
+router.post('/', upload.single('img'), pitchsController.newPitch);
 
 /*** GET ONE PITCH ***/
 router.get('/detail/:id', pitchsController.detail);
