@@ -1,0 +1,14 @@
+@import url(variables.css);
+
+.sectMain{
+    display: flex;
+    flex-direction: column;
+}
+.imgPitch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgPitch img{
+    width: 50%;
+}

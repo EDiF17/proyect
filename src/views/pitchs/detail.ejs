@@ -1,47 +1,53 @@
-<%- include("../partials/head", {styles: ['header-navbar-footer', 'pitchs-style'], title: 'Detail pitchs'}) %>
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'detail-style'], title: 'Detail pitchs'}) %>
 
 <body>
     <%- include("../partials/header") %>
-    <article>
-        <div>
-            <h2><%= locals.pitch && pitch.name %></h2>
-        </div>
-        <div>
-            <img src="/img/pitchs/<%= locals.pitch && pitch.img %>" alt="pitch-img">
-        </div>
-        <div>
-            <p><%= locals.pitch && pitch.description %></p>
-        </div>
-    </article>
-        <label for="">Fecha</label>
-        <select name="" id="">
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-        </select>
-    </div>
-    <div>
-        <label for="">Horario</label>
-        <select name="" id="">
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-        </select>
-    </div>
-    <div>
-        <a href=""><button>reservar</button></a>
-    </div>
+    <section class="sectMain">
+        <article class="container">
+            <div class="namePitch">
+                <h2><%= locals.pitch && pitch.name %><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 48 48"><mask id="IconifyId18b6e518b9759489b207"><g fill="none"><path fill="#555" stroke="#fff" stroke-miterlimit="2" stroke-width="4" d="M29 14a5 5 0 1 0 0-10a5 5 0 0 0 0 10Z"/><path fill="#fff" d="M19 46a3 3 0 1 0 0-6a3 3 0 0 0 0 6Z"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="4" d="M24.38 18.91L20 27l7.31 6.02c.31.24.53.57.66.94L31 44M20 27l-5.49 7.64c-.54.79-1.56 1.09-2.44.72L4 32"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="4" d="M42 24h-7c-.36 0-.72-.09-1.04-.27l-3.21-1.81c-4.01-2.35-8.4-3.96-12.97-4.78l-3.22-.57c-.45-.08-.92 0-1.32.22L7 20"/></g></mask><path fill="#000000" d="M0 0h48v48H0z" mask="url(#IconifyId18b6e518b9759489b207)"/></svg></h2>
+            </div>
+            <div class="imgPitch">
+                <img src="/img/pitchs/<%= locals.pitch && pitch.img %>" alt="pitch-img">
+            </div>
+            <div class="descriptionPitch">
+                <p><%= locals.pitch && pitch.description %></p>
+            </div>
+        </article>
+        <article class="datePitch">
+            <label for="">Fecha</label>
+            <select name="" id="">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+        </article>
+        <article class="hourPitch">
+            <label for="">Horario</label>
+            <select name="" id="">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+            
 
-    <div>
-    <a href="/pitchs/edit/<%= pitch.id %>" class="">EDITAR PRODUCTO</a>
-    <form action="/pitchs/<%= pitch.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-        <button type="submit" class="">ELIMINAR</button>
-    </div>
 
+        </article>
+        <div class="buttonReserv">
+            <a href=""><button>reservar</button></a>
+        </div>
+
+        <div class="editDestroy">
+            <a href="/pitchs/edit/<%= pitch.id %>" class="">EDITAR PRODUCTO</a>
+            <form action="/pitchs/<%= pitch.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                <button type="submit" class="">ELIMINAR</button>
+        </div>
+    </section>
     <%- include("../partials/footer") %>
 </body>
+
 </html>
