@@ -1,15 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Marote",
-    "description": "La mejor cancha de la cuadra",
-    "time": "10 a.m. - 00 a.m.",
-    "location": "Chivilcoy 1012",
-    "category": "centro",
-    "price": 2200,
-    "img": "cancha-prueba.webp"
-  },
-  {
     "id": 2,
     "img": "pitch-1698335483966.png",
     "name": "holaa",
@@ -22,12 +12,12 @@
   {
     "id": 3,
     "img": "cancha-prueba.webp",
-    "name": "qwe",
-    "location": "qwe",
+    "name": "Prueba de estilo",
+    "location": "Aca",
     "category": "centro",
-    "time": "qwe",
-    "description": "eqw",
-    "price": "qwe"
+    "time": "A definir",
+    "description": "La mejor cancha del barrio",
+    "price": "1000"
   },
   {
     "id": 4,

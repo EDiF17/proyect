@@ -1,5 +1,8 @@
 @import url(variables.css);
-
+.namePitch{
+    text-align: center;
+    text-decoration:underline;
+}
 .sectMain{
     display: flex;
     flex-direction: column;
@@ -11,4 +14,27 @@
 }
 .imgPitch img{
     width: 50%;
+    margin-left: 10px;
 }
+.detailsPitch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+.descriptionPitch {
+    font-weight: 500;
+    margin: 10px;
+    
+}
+.dateHourPitch{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    background-color: var(--bgNavBar-color);
+    border-radius: 10px;
+    color: var(--secondText-color);
+    padding: 10px;
+    align-items: center;
+}
+
