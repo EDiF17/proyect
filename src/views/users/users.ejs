@@ -1,0 +1,36 @@
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'user-style'], title: 'Usuarios registrados'}) %>
+<body>
+    <!-- Header -->
+    <%- include("../partials/header", { styles: ['', '']}) %>
+    <!-- /Header -->
+    <h2>listado de los usuarios registrados</h2>
+    
+    !-- APLICAR EJS PARA VER LISTADO DE USUARIOS REGISTRADOS  -->
+    
+    <% locals.users && users.forEach(user => { %>
+        <section class="">
+            <a href="/user/profile/<%= user.id %>">
+            <article class="">
+                <div><img src="/img/users/<%= user.imgPerfil %>" alt="user-imgPerfil"></div>
+                <div>
+                    <h2><%=  user.firstName %></h2>
+                    <p><%=  user.lastName %></p>
+                </div>
+                <div>               
+                    <P><%=  user.position %></P>
+                    <p><%=  user.center %></p>
+                </div>
+            </a>
+        </section>
+        <% }) %>
+
+    <!-- APLICAR EJS PARA VER LISTADO DE USUARIOS REGISTRADOS  -->
+
+
+
+    <!-- footer  -->
+    <%- include("../partials/footer"), {styles: ['', '']} %>
+    <!-- /footer -->
+</body>
+    
+</html>

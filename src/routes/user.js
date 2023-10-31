@@ -1,21 +1,44 @@
 const express = require('express');
 const path = require('path');
 
+const router = express.Router();
+
 const multer = require('multer');
+const storage = multer.diskStorage({
+    destination : (req, file, cb) =>  {
+        cb(null, path.join(__dirname, '../public/img/users'));
+    },
+    filename : (req, file, cb) => {
+        let imageName = 'user-' + Date.now() + path.extname(file.originalname);
+        cb(null, imageName);
+    }
+});
+
+const upload = multer({ storage });
 
 const userController = require('../controllers/userController');
 
-const router = express.Router();
+/*** GET ALL USERS ***/
+router.get('/', userController.index);
 
+/*** CREATE ONE USER ***/
+router.get('/register', userController.register);
+router.post('/register', upload.single('imgPerfil'), userController.newUser);
+
+/*** GET ONE USER ***/
+router.get('/profile/:id', userController.profile);
+
+/*** EDIT ONE USER ***/
+router.get('/edit/:id', userController.edit);
+router.put('/:id', upload.single('imgPerfil'), userController.update);
+
+/*** DELETE ONE USER***/ 
+router.delete('/:id', userController.destroy);
+
+/*** FORM TO LOGIN ***/ 
 router.get('/login', userController.login);
 
-router.get('/register', userController.register);  // router.get('/create', userController.create);
-
-router.post('/register', userController.newUser);
-
-router.get('/profile', userController.profile);
-
-
+// FALTA PROCESO COMPLETO DE LOGIN
 
 
 module.exports = router;
@@ -24,21 +47,3 @@ module.exports = router;
 
 // const guestMiddleware = require('../middlewares/guestMiddleware');
 // const { createUserValidation } = require('../middlewares/userValidations');
-
-
-// const storage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//         cb(null, path.join(__dirname, '../public/img/users'))
-//     },
-//     filename: (req, file, cb) => {
-//         const ext = path.extname(file.originalname);
-//         // const filename = path.basename(file.originalname, ext);
-//         // cb(null, `${filename}-${Date.now()}${ext}`)
-//         cb(null, `${file.fieldname}-${Date.now()}${ext}`)
-//     }
-// });
-// const upload = multer({ storage });
-
-
-// router.get('/', guestMiddleware, userController.index);
-// router.post('/create', upload.single('img'), createUserValidation, userController.store);

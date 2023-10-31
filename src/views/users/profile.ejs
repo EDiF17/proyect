@@ -5,10 +5,28 @@
     <%- include("../partials/header") %>
     <!-- /Header -->
 
-        <h1> perfil de usuario </h1>
+        <h1> MI PERFIL </h1>
+        <h2>
+            <%= locals.user && user.firstName %>
+        </h2>
+        <div>
+            <img src="/img/users/<%= locals.user && user.imgPerfil %>" alt="user-img">
+        </div>
+
+
+        <p>
+            <%= locals.user && user.position %>
+        </p>
 
 
 
+
+
+        <div class="editDestroy">
+            <a href="/user/edit/<%= user.id %>" class="">EDITAR USUARIO</a>
+            <form action="/user/<%= user.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                <button type="submit" class="">ELIMINAR USUARIO</button>
+        </div>
 </main>
 <!-- footer  -->
 <%- include("../partials/footer"), {styles: ['', '']} %>

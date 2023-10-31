@@ -29,8 +29,6 @@ router.post('/', upload.single('img'), pitchsController.newPitch);
 /*** GET ONE PITCH ***/
 router.get('/detail/:id', pitchsController.detail);
 
-// router.get('/detail/', pitchsController.detail);
-
 /*** EDIT ONE PITCH ***/ 
 router.get('/edit/:id', pitchsController.edit);
 router.put('/:id', upload.single('img'), pitchsController.update);
@@ -38,8 +36,6 @@ router.put('/:id', upload.single('img'), pitchsController.update);
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/:id', pitchsController.destroy);
-
-
 
 
 module.exports = router;

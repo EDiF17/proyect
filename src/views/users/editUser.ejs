@@ -1,0 +1,74 @@
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'user-style'], title: 'Register'}) %>
+<body>
+    <!-- Header -->
+    <%- include("../partials/header", { styles: ['', '']}) %>
+    <!-- /Header -->
+    <form action="/user/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+        <div>
+            <label for="firstName">Nombre</label><br>
+            <input type="text" id="firstName" name="firstName" value="<%= userToEdit.firstName %>">
+        </div>
+        <div>
+            <label for="lastName">Apellido</label><br>
+            <input type="text" id="lastName" name="lastName" value="<%= userToEdit.lastName %>">
+        </div>
+        <div>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" value="<%= userToEdit.email %>">
+        </div>
+        <div>
+            <label for="phone">Número de contacto</label><br>
+            <input type="number" id="phone" name="phone" value="<%= userToEdit.phone %>">
+        </div>
+        <div>
+            <label for="location">Ubicación</label><br>
+            <input type="text" id="location" name="location" value="<%= userToEdit.location %>">
+        </div>
+        <div>
+            <label for="zone">Zona</label>
+            <select name="zone" id="">
+                <option value="center">Centro</option>
+                <option value="south">Sur</option>
+                <option value="north">Norte</option>
+            </select>
+        </div>
+        <div>
+            <label for="position">Posicion</label>
+            <select name="position" id="">
+                <option value="goalkeeper">Arquero</option>
+                <option value="defender">Defensor</option>
+                <option value="forward">Delantero</option>
+            </select>
+        </div>
+        <!-- <div>
+<label for="">Habilidad destacada</label>
+<select name="" id="">
+    <option value=""></option>
+</select>
+</div> -->
+        <div class="imgField">
+            <label for="imgPerfil">Imagen de perfil</label><br>
+            
+            <input type="file" name="imgPerfil" id="imgPerfil">
+        
+        </div>
+        <div>
+            <label for="password">Contraseña</label><br>
+            <input type="password" id="password" name="password">
+        </div>
+        <!-- <div>
+<label for="password">Repetir contraseña</label><br>
+<input type="password" id="password" name="password" placeholder="">
+</div> -->
+        <div>
+            <button type="reset" id="reset">Borrar</button>
+            <button type="submit" id="submit">Enviar</button>
+        </div>
+</div>
+    </form>
+    <!-- footer  -->
+    <%- include("../partials/footer"), {styles: ['', '']} %>
+    <!-- /footer -->
+</body>
+</html>
