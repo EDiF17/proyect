@@ -1,8 +1,11 @@
 @import url(variables.css);
-body{
-    font-family:Montserrat ;
+body {
+    font-family: Montserrat;
     background-color: var(--background-color);
-}
+    position: relative;
+    padding-bottom: 10em;
+    min-height: 100vh;
+  }
 /* Header */
 .list{
     display: none;
@@ -41,12 +44,14 @@ body{
     border-radius: 10px;
 }
 /* FOOTER */
-footer{
+footer {
     background-color: var(--bgNavBar-color);
     display: flex;
     justify-content: space-between;
-}
-
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 .linkInfo{
     display: flex;
     flex-direction: column;

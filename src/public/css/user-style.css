@@ -4,9 +4,10 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:  center;
+    align-items: center;
     margin-bottom: 25px;
-}
+    margin-top: 128px;
+  }
 form div {
     margin: 15px;
 }
