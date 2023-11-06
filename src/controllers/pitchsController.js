@@ -31,7 +31,7 @@ const controller = {
             ...req.body
         };
         
-        console.log(pitchsToCreate)
+        console.log(req.file)
         pitchs.push(pitchsToCreate);
         fs.writeFileSync(pitchsFilePath, JSON.stringify(pitchs, null, 2));
         res.redirect('/pitchs');

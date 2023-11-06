@@ -3,6 +3,9 @@ const path = require('path');
 
 const router = express.Router();
 
+const logDBUserMiddleware = require('../middlewares/logDBUserMiddleware')
+const { createUserValidations } = require('../middlewares/userValidations');
+
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination : (req, file, cb) =>  {
@@ -14,7 +17,7 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage });
+const upload = multer({ storage }) // APLICACION DE FILEFILTER PARA MULTER 
 
 const userController = require('../controllers/userController');
 
@@ -23,7 +26,7 @@ router.get('/', userController.index);
 
 /*** CREATE ONE USER ***/
 router.get('/register', userController.register);
-router.post('/register', upload.single('imgPerfil'), userController.newUser);
+router.post('/register', createUserValidations, logDBUserMiddleware, upload.single('imgPerfil'), userController.newUser);
 
 /*** GET ONE USER ***/
 router.get('/profile/:id', userController.profile);
@@ -37,7 +40,7 @@ router.delete('/:id', userController.destroy);
 
 /*** FORM TO LOGIN ***/ 
 router.get('/login', userController.login);
-
+router.post('/login', userController.loginProcess);
 // FALTA PROCESO COMPLETO DE LOGIN
 
 

@@ -11,27 +11,65 @@
                 <h3>Formá parte de nuestra comunidad y competí contra tus amigos</h3>
             </div>
 
-                <form action="" method="POST" enctype="multipart/form-data" class="">
+                <form action="/user/register" method="POST" enctype="multipart/form-data" class="">
                     <h4>Creá tu cuenta</h4>
-                <div>
+                
+                
+                    <div>
                     <label for="firstName">Nombre</label><br>
-                    <input type="text" id="firstName" name="firstName" placeholder="">
+                    <input 
+                    type="text" 
+                    id="firstName" 
+                    name="firstName" 
+                    value="<%= locals.oldData ? oldData.firstName : null %>"
+                    class="<%= locals.errors && errors.firstName ? 'is-invalid' : null  %>">
+                    
+                    <% if (locals.errors && errors.firstName) { %>
+                        <div>
+                            <%= errors.firstName.msg %>
+                        </div>  
+                    <% } %>
                 </div>
+                
                 <div>
                     <label for="lastName">Apellido</label><br>
-                    <input type="text" id="lastName" name="lastName" placeholder="">
+                    <input type="text" id="lastName" name="lastName" value="<%= locals.oldData ? oldData.lastName : null %>">
+                    
+                    <% if (locals.errors && errors.lastName) { %>
+                        <div>
+                            <%= errors.lastName.msg %>
+                        </div> 
+                    <% } %>
                 </div>
+
                 <div>
                     <label for="email">Email</label><br>
-                    <input type="email" id="email" name="email" placeholder="">
+                    <input type="email" id="email" name="email" value="<%= locals.oldData ? oldData.email : null %>">
+                    
+                    <% if (locals.errors && errors.email) { %>
+                        <div>
+                            <%= errors.email.msg %>
+                        </div> 
+                    <% } %>
                 </div>
                 <div>
                     <label for="phone">Número de contacto</label><br>
-                    <input type="number" id="phone" name="phone" placeholder="">
+                    <input type="number" id="phone" name="phone" placeholder="Sin 0 ni 15" value="<%= locals.oldData ? oldData.phone : null %>">
+                    
+                    <% if (locals.errors && errors.phone) { %>
+                        <div>
+                            <%= errors.phone.msg %>
+                        </div> 
+                    <% } %>
                 </div>
                 <div>
                     <label for="location">Ubicación</label><br>
-                    <input type="text" id="location" name="location" placeholder="">
+                    <input type="text" id="location" name="location" value="<%= locals.oldData ? oldData.location : null %>">
+                    <% if (locals.errors && errors.location) { %>
+                        <div>
+                            <%= errors.location.msg %>
+                        </div> 
+                    <% } %>
                 </div>
                 <div>
                     <label for="zone">Zona</label>

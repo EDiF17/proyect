@@ -5,8 +5,6 @@
     <!-- /Header -->
     <h2>listado de los usuarios registrados</h2>
     
-    !-- APLICAR EJS PARA VER LISTADO DE USUARIOS REGISTRADOS  -->
-    
     <% locals.users && users.forEach(user => { %>
         <section class="">
             <a href="/user/profile/<%= user.id %>">

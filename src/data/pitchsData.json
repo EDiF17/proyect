@@ -41,12 +41,42 @@
   },
   {
     "id": 6,
-    "img": "pitch-1698781267546.jpg",
-    "name": "qwe",
-    "location": "qew",
+    "img": "cancha-prueba.webp",
+    "name": "caja",
+    "location": "san joose 123",
     "category": "centro",
-    "time": "qweqw",
-    "description": "qew",
-    "price": "qwe"
+    "time": "5 p.m. - 12 a.m.",
+    "description": "descr",
+    "price": "123123"
+  },
+  {
+    "id": 7,
+    "img": "pitch-1699290722246.jpg",
+    "name": "asdasd",
+    "location": "asdsda",
+    "category": "centro",
+    "time": "asdsda",
+    "description": "sdasda",
+    "price": "1000"
+  },
+  {
+    "id": 8,
+    "img": "cancha-prueba.webp",
+    "name": "Samsung Galaxy S54",
+    "location": "Sarmiento 29571",
+    "category": "centro",
+    "time": "10 am - 20 pm",
+    "description": "",
+    "price": "1000"
+  },
+  {
+    "id": 9,
+    "img": "cancha-prueba.webp",
+    "name": "Samsung Galaxy S10",
+    "location": "carreras 1234",
+    "category": "norte",
+    "time": "de 10 a 17",
+    "description": "asdasd",
+    "price": "2200"
   }
 ]

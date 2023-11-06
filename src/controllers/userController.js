@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
+const { validationResult } = require('express-validator');
+const { Console } = require('console');
 
 const usersFilePath = path.join(__dirname, '../data/usersData.json');
 
@@ -27,6 +29,15 @@ const controller = {
 
     newUser (req, res) {
         const users = getUsers();
+
+        const errors = validationResult(req);
+        
+        if (!errors.isEmpty()) {
+            return res.render('users/register', { 
+                errors: errors.mapped(),
+                oldData: req.body
+            });
+        } else {
         const user = {
             id : users[users.length - 1] ? users[users.length - 1].id + 1 : 1,
             ...req.body,
@@ -37,7 +48,8 @@ const controller = {
         users.push(user);
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 4));
         return res.redirect('/user')
-    },
+    }
+},
 
     profile (req, res) {
         const users = getUsers();
@@ -80,34 +92,12 @@ const controller = {
         users.splice(userIndex, 1);
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
         res.redirect('/user');
+    },
+
+    loginProcess (req, res) {
+        return res.sender(req.body)
     }
 }
 
 
 module.exports = controller;
-
-
-// const { validationResult } = require('express-validator');
-
-// const controller = {
-//     index(req, res) {
-//         return res.render('user', { user: req.user });
-//     },
-//     create(req, res) {
-//         return res.render('userCreate');
-//     },
-//     store(req, res) {
-//         const errors = validationResult(req);
-//         if (!errors.isEmpty()) {
-//             return res.render('userCreate', { 
-//                 errors: errors.mapped(),
-//                 oldData: req.body
-//             });
-//         }
-//         return res.send({...req.body, img: req.file.filename});
-//     }
-// };
-
-  // create (req, res) {
-    //     return res.render('users/userCreate');
-    // },
