@@ -34,5 +34,17 @@
         "position": "goalkeeper",
         "password": "$2a$10$/VHirHJC5k8dZL8b2lhC4.SQer9uh0.SuIBGCUbL2V3FonS0VNTD.",
         "imgPerfil": "cancha-prueba.webp"
+    },
+    {
+        "id": 4,
+        "firstName": "emi",
+        "lastName": "di fulvio",
+        "email": "emiidf1@gmail.com",
+        "phone": "3465656565",
+        "location": "san joose 123",
+        "zone": "center",
+        "position": "goalkeeper",
+        "password": "$2a$10$OHF1fHQXAsfgHBfoaVd9Q.rBIEWp/fyUZhfohaCT2lkufR.Yo4uhq",
+        "imgPerfil": "cancha-prueba.webp"
     }
 ]

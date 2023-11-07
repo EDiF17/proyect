@@ -26,7 +26,7 @@ router.get('/', userController.index);
 
 /*** CREATE ONE USER ***/
 router.get('/register', userController.register);
-router.post('/register', createUserValidations, logDBUserMiddleware, upload.single('imgPerfil'), userController.newUser);
+router.post('/register', upload.single('imgPerfil'), createUserValidations, logDBUserMiddleware,  userController.newUser);
 
 /*** GET ONE USER ***/
 router.get('/profile/:id', userController.profile);
