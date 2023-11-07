@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage }) // APLICACION DE FILEFILTER PARA MULTER 
+const upload = multer({ storage }) 
 
 const userController = require('../controllers/userController');
 

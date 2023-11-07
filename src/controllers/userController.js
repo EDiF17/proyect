@@ -3,7 +3,6 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 
 const { validationResult } = require('express-validator');
-const { Console } = require('console');
 
 const usersFilePath = path.join(__dirname, '../data/usersData.json');
 
@@ -31,13 +30,15 @@ const controller = {
         const users = getUsers();
 
         const errors = validationResult(req);
+        // res.send(errors);
         
         if (!errors.isEmpty()) {
             return res.render('users/register', { 
                 errors: errors.mapped(),
                 oldData: req.body
             });
-        } else {
+        } 
+
         const user = {
             id : users[users.length - 1] ? users[users.length - 1].id + 1 : 1,
             ...req.body,
@@ -48,8 +49,7 @@ const controller = {
         users.push(user);
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 4));
         return res.redirect('/user')
-    }
-},
+    },
 
     profile (req, res) {
         const users = getUsers();

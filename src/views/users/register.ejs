@@ -33,7 +33,10 @@
                 
                 <div>
                     <label for="lastName">Apellido</label><br>
-                    <input type="text" id="lastName" name="lastName" value="<%= locals.oldData ? oldData.lastName : null %>">
+                    <input type="text" 
+                    id="lastName" 
+                    name="lastName" 
+                    value="<%= locals.oldData ? oldData.lastName : null %>">
                     
                     <% if (locals.errors && errors.lastName) { %>
                         <div>

@@ -1,26 +1,38 @@
 [
-  {
-    "id": 1,
-    "firstName": "Jose",
-    "lastName": "Perez",
-    "email": "josesito@playground.com",
-    "phone": "3411563434",
-    "location": "Pellegrini 1500",
-    "zone": "center",
-    "position": "defender",
-    "password": "$2a$10$AdxEXEWv74r3VgHrhLv.6uAn.efFWeNyWP/5ZsjH29SNyg5V3tAdK",
-    "imgPerfil": "user-1699284244109.jpg"
-  },
-  {
-    "id": 2,
-    "firstName": "divo",
-    "lastName": "Uriel",
-    "email": "emi@ddd",
-    "phone": "3123123",
-    "location": "san joose 123",
-    "zone": "center",
-    "position": "goalkeeper",
-    "password": "$2a$10$TrifvwwvDFr69HXfLplU7.acSJI.3/hTlF.CJ5uKn0XwtzY.9Y0ky",
-    "imgPerfil": "cancha-prueba.webp"
-  }
+    {
+        "id": 1,
+        "firstName": "Jose",
+        "lastName": "Perez",
+        "email": "josesito@playground.com",
+        "phone": "3411563434",
+        "location": "Pellegrini 1500",
+        "zone": "center",
+        "position": "defender",
+        "password": "$2a$10$AdxEXEWv74r3VgHrhLv.6uAn.efFWeNyWP/5ZsjH29SNyg5V3tAdK",
+        "imgPerfil": "user-1699284244109.jpg"
+    },
+    {
+        "id": 2,
+        "firstName": "divo",
+        "lastName": "Uriel",
+        "email": "emi@ddd",
+        "phone": "3123123",
+        "location": "san joose 123",
+        "zone": "center",
+        "position": "goalkeeper",
+        "password": "$2a$10$TrifvwwvDFr69HXfLplU7.acSJI.3/hTlF.CJ5uKn0XwtzY.9Y0ky",
+        "imgPerfil": "cancha-prueba.webp"
+    },
+    {
+        "id": 3,
+        "firstName": "emi",
+        "lastName": "di fulvio",
+        "email": "emi@ddd",
+        "phone": "34343434",
+        "location": "Sarmiento 2957",
+        "zone": "center",
+        "position": "goalkeeper",
+        "password": "$2a$10$/VHirHJC5k8dZL8b2lhC4.SQer9uh0.SuIBGCUbL2V3FonS0VNTD.",
+        "imgPerfil": "cancha-prueba.webp"
+    }
 ]
