@@ -1,23 +1,21 @@
-<%- include("../partials/head", {styles: ['header-navbar-footer', 'user-style'], title: 'Usuarios registrados'}) %>
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'users-views'], title: 'Usuarios registrados'}) %>
 <body>
     <!-- Header -->
-    <%- include("../partials/header", { styles: ['', '']}) %>
+    <%- include("../partials/header") %>
     <!-- /Header -->
-    <h2>listado de los usuarios registrados</h2>
+    <h2>Usuarios registrados</h2>
     
     <% locals.users && users.forEach(user => { %>
-        <section class="">
+        <section class="cardProfile">
             <a href="/user/profile/<%= user.id %>">
             <article class="">
                 <div><img src="/img/users/<%= user.imgPerfil %>" alt="user-imgPerfil"></div>
-                <div>
-                    <h2><%=  user.firstName %></h2>
+                <div class="infoUsers">
+                    <p><%=  user.firstName %></p>
                     <p><%=  user.lastName %></p>
-                </div>
-                <div>               
-                    <P><%=  user.position %></P>
+                    <p><%=  user.position %></P>
                     <p><%=  user.center %></p>
-                </div>
+            </div>
             </a>
         </section>
         <% }) %>
@@ -27,7 +25,7 @@
 
 
     <!-- footer  -->
-    <%- include("../partials/footer"), {styles: ['', '']} %>
+    <%- include("../partials/footer") %>
     <!-- /footer -->
 </body>
     
