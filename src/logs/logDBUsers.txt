@@ -15,3 +15,5 @@ Se registró un nuevo usuario - 1699304093815 - /register
 Se registró un nuevo usuario - 1699304104355 - /register
 Se registró un nuevo usuario - 1699304109449 - /register
 Se registró un nuevo usuario - 1699304111226 - /register
+Se registró un nuevo usuario - 1699371848600 - /register
+Se registró un nuevo usuario - 1699371862069 - /register
