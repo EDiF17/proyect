@@ -8,10 +8,10 @@
 
     <% locals.users && users.forEach(user => { %>
     <section class="cardProfile">
-        <article class="">
-            <div>
-                <img src="/img/users/<%= user.imgPerfil %>" alt="user-imgPerfil">
+        <article>
+            <div class="imgId">
                 <a href="/user/profile/<%= user.id %>"><%= user.id %></a>
+                <img src="/img/users/<%= user.imgPerfil %>" alt="user-imgPerfil">
             </div>
             <div class="infoUsers">
                 <div>
