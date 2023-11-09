@@ -1,10 +1,10 @@
 @import url(variables.css);
 
-.cardProfile a{
+.cardProfile article{
+    background-color: var(--bgNavBar-color);
     border: 1px solid red;
     display:flex;
     align-items: center;
-    justify-content: space-around;
     width: 100%;
     text-decoration: none;
 }
@@ -12,16 +12,19 @@
     width: 30%;
 }
 .cardProfile div img {
-    width: 100%;
+    width: 50px;
+    padding: 10px;
+    margin-left: 15px;
 }
 .infoUsers{
     display: flex;
-    flex-direction: column;
-    text-align: center;
+    justify-content: space-around;
     align-items: flex-start;
 }
 .infoUsers p{
+    display: inline;
     color: black;    
     font-size: 15px;
+    border: 1px solid red;
 }
 
