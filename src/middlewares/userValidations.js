@@ -31,7 +31,7 @@ module.exports = { createUserValidations };
 // body('imgPerfil')
     //     .custom((value, { req }) => {
     //         let file = req.file;
-    //         let acceptedExtensions = ['.jpg', '.png', '.gif', '.webp', '.svg'];
+    //         let acceptedExtensions = ['.jpg', '.png', '.gif'];
     //         if (!file) {
     //             throw new Error('Tienes que subir una imagen');
     //         } else {

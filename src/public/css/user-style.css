@@ -11,14 +11,18 @@ form div {
     margin: 15px;
 }
 h2{
-    font-size: 30px;
+    font-size: 25px;
+    margin-left: 5px;
 }
 h3{
-    font-size: 25px;
+    font-size: 20px;
+    text-align: center;
+    text-wrap: wrap;
 }
 h4 {
-    font-size: 20px;
+    font-size: 18px;
 }
 form div label{
+    font-size: 14px;
     font-weight: 700;
 }
