@@ -4,24 +4,25 @@ const multer = require('multer');
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         var folder = new String();
-        if (file.fieldname.includes("product-img")) {
-            folder = path.join(__dirname, '../public/images/products');
+        if (file.fieldname.includes("pitch")) {
+            folder = path.join(__dirname, '../public/img/pitchs');
         } else {
-            folder = path.join(__dirname, '../public/images/users');
+            folder = path.join(__dirname, '../public/img/users');
         }
         cb(null, folder);
     },
+    
     filename: (req, file, cb) => {
         var fileName = new String();
         let field = file.fieldname
-        if (field.includes("product-img")) {
-            fileName = ${Date.now()}_product${path.extname(file.originalname)};
+        if (field.includes("pitch")) {
+            fileName = Date.now() + '_pitch_' + (path.extname(file.originalname));
         } else {
-            fileName = ${Date.now()}_user${path.extname(file.originalname)};
+            fileName = Date.now() + '_user_' + (path.extname(file.originalname));
         }
-        
         cb(null, fileName);
     },
+    
     fileFilter: (req, file, cb) => {
         console.log("El tipo de archivo es " + file.mimetype);
         let mimetypes = ["image/png", "image/jpg","image/jpeg", "image/gif"]
@@ -37,4 +38,3 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 module.exports = uploadFile;
-
