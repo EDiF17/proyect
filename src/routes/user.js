@@ -17,23 +17,25 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage }) 
+const uploadFile = multer({ storage }) 
 
 const userController = require('../controllers/userController');
+
+// const uploadFile = require('../middlewares/multerMiddleware');
 
 /*** GET ALL USERS ***/
 router.get('/', userController.index);
 
 /*** CREATE ONE USER ***/
 router.get('/register', userController.register);
-router.post('/register', upload.single('imgPerfil'), createUserValidations, logDBUserMiddleware,  userController.newUser);
+router.post('/register', uploadFile.single('imgPerfil'), createUserValidations, logDBUserMiddleware,  userController.newUser);
 
 /*** GET ONE USER ***/
 router.get('/profile/:id', userController.profile);
 
 /*** EDIT ONE USER ***/
 router.get('/edit/:id', userController.edit);
-router.put('/:id', upload.single('imgPerfil'), userController.update);
+router.put('/:id', uploadFile.single('imgPerfil'), userController.update);
 
 /*** DELETE ONE USER***/ 
 router.delete('/:id', userController.destroy);
