@@ -17,12 +17,6 @@ Se registró un nuevo usuario - 1699304109449 - /register
 Se registró un nuevo usuario - 1699304111226 - /register
 Se registró un nuevo usuario - 1699371848600 - /register
 Se registró un nuevo usuario - 1699371862069 - /register
-Se registró un nuevo usuario - 1699624289663 - /register
-Se registró un nuevo usuario - 1699624310689 - /register
-Se registró un nuevo usuario - 1699624317367 - /register
-Se registró un nuevo usuario - 1699624395840 - /register
-Se registró un nuevo usuario - 1699624445512 - /register
-Se registró un nuevo usuario - 1699624457365 - /register
-Se registró un nuevo usuario - 1699624464702 - /register
-Se registró un nuevo usuario - 1699624529812 - /register
-Se registró un nuevo usuario - 1699624544241 - /register
+Se registró un nuevo usuario - 1699636411483 - /register
+Se registró un nuevo usuario - 1699639277294 - /register
+Se registró un nuevo usuario - 1699639307883 - /register

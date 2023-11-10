@@ -16,23 +16,25 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage });
+const uploadFile = multer({ storage });
 
 const pitchsController = require('../controllers/pitchsController');
+
+// const uploadFile = require('../middlewares/multerMiddleware');
 
 /*** GET ALL PITCHS ***/ 
 router.get('/', pitchsController.index);
 
 /*** CREATE ONE PITCH ***/
 router.get('/create', pitchsController.create);
-router.post('/', logDBPitchMiddleware, upload.single('img'), pitchsController.newPitch);
+router.post('/', uploadFile.single('img'), logDBPitchMiddleware, pitchsController.newPitch);
 
 /*** GET ONE PITCH ***/
 router.get('/detail/:id', pitchsController.detail);
 
 /*** EDIT ONE PITCH ***/ 
 router.get('/edit/:id', pitchsController.edit);
-router.put('/:id', upload.single('img'), pitchsController.update);
+router.put('/:id', uploadFile.single('img'), pitchsController.update);
 
 
 /*** DELETE ONE PRODUCT***/ 

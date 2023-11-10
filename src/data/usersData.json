@@ -46,5 +46,29 @@
         "position": "goalkeeper",
         "password": "$2a$10$OHF1fHQXAsfgHBfoaVd9Q.rBIEWp/fyUZhfohaCT2lkufR.Yo4uhq",
         "imgPerfil": "cancha-prueba.webp"
+    },
+    {
+        "id": 5,
+        "firstName": "emi",
+        "lastName": "di fulvio",
+        "email": "emilio@gmail.com",
+        "phone": "3434656565",
+        "location": "carreras 1234",
+        "zone": "center",
+        "position": "goalkeeper",
+        "password": "$2a$10$lwbGroK3sHLgtTBQBNggUu9c6J6YJckRfSdqnD1htmW.APiMsj4RC",
+        "imgPerfil": "1699636411433_user.jpg"
+    },
+    {
+        "id": 6,
+        "firstName": "emi",
+        "lastName": "difu",
+        "email": "emilio@gmail.com",
+        "phone": "1234567891",
+        "location": "Sarmiento 29571",
+        "zone": "center",
+        "position": "goalkeeper",
+        "password": "$2a$10$5VFWkrgIouKZp1HSt3YGW.Ew7FIGSF/6FfPS0mP21gKm/poIuChuy",
+        "imgPerfil": "user-1699639307666.jpg"
     }
 ]
