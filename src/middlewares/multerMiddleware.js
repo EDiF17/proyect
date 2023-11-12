@@ -12,27 +12,18 @@ const storage = multer.diskStorage({
         cb(null, folder);
     },
     filename: (req, file, cb) => {
-        var fileName = new String();
-        let field = file.fieldname
-        if (field.includes("product-img")) {
-            fileName = ${Date.now()}_product${path.extname(file.originalname)};
-        } else {
-            fileName = ${Date.now()}_user${path.extname(file.originalname)};
-        }
-        
-        cb(null, fileName);
-    },
-    fileFilter: (req, file, cb) => {
-        console.log("El tipo de archivo es " + file.mimetype);
-        let mimetypes = ["image/png", "image/jpg","image/jpeg", "image/gif"]
-        if (mimetypes.includes(file.mimetype)) {
-            cb(null, true);
-        } else {
-            cb(null, false);
-            return cb(new Error('Formato de archivo invalido'));
-        }
-    }
-})
+        cb(null, `${Date.now()}_${file.fieldname}${path.extname(file.originalname)}`);
+      }
+    });
+    
+    const fileFilter = (req, file, cb) => {
+      const ext = path.extname(file.originalname);
+      if (ext === '.jpg' || ext === '.jpeg' || ext === '.png') {
+        cb(null, true);
+      } else {
+        cb(new Error('Solo se admiten imágenes JPEG o PNG'), false);
+      }
+    };
 
 const uploadFile = multer({ storage });
 
