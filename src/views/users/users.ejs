@@ -10,20 +10,28 @@
     <section class="cardProfile">
         <article>
             <div class="imgId">
-                <img src="/img/users/<%= user.imgPerfil %>" alt="user-imgPerfil">
                 <a href="/user/profile/<%= user.id %>"><%= user.id %></a>
+                <img src="/img/users/<%= user.imgPerfil %>" alt="user-imgPerfil">
             </div>
             <div class="infoUsers">
                 <div>
-                    <p><%=  user.firstName %></p>
-                    <p><%=  user.lastName %></p>
+                    <p>Nombre</p>
+                    <%=  user.firstName %>
                 </div>
                 <div>
-                    <p><%=  user.position %></P>
-                    <p><%=  user.zone %></p>
+                    <p>Posicion</p>
+                    <%=  user.position %>
+                </div>
+                <div>
+                    <p>Apellido</p>
+                    <%=  user.lastName %>
+                </div>
+                <div>
+                    <p>Zona frecuente</p>
+                    <%=  user.zone %>
                 </div>
             </div>
-
+        </article>
     </section>
     <% }) %>
 

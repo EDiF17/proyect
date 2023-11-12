@@ -1,45 +1,48 @@
 @import url(variables.css);
 .cardProfile{
     margin: 10px;
+    height: 100%;
 }
 .cardProfile article{
     background-color: var(--bgNavBar-color);
-    border: 1px solid red;
     display:flex;
     justify-content:start;
     align-items: center;
     width: 100%;
     text-decoration: none;
 }
-.cardProfile  div {
-    width: 30%;
+.cardProfile article div {
+    width: 20%;
 }
 .cardProfile div img {
     width: 50px;
-    padding: 10px;
     object-fit: cover;
 }
-.infoUsers{
+.imgId{
+    margin-left:20px ;
+    width: 50px;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    text-align: center;
+    justify-content:space-evenly;
+    align-items: center;
 }
-.infoUsers div{
-    display: flex;
-    flex-direction: column;
+.imgId a{
+    color: black;
+    text-decoration: none;
+}
+.infoUsers{
+    display: grid;
+    grid: repeat(2, 47%) / auto-flow 150%;
+    align-items: center;
+    margin-left: 10%;
+    width: 100%;
+    text-wrap: nowrap;
+    padding-bottom: 10px;
+    border: 1px solid red;
 }
 .infoUsers p{
-    display: inline;
-    flex-direction: row;
-    color: black;    
-    font-size: 15px;
+    box-sizing: content-box;
     text-wrap: nowrap;
-    border: 1px solid red;
-}
-.imgId{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 1px solid red;
+    margin-bottom: 2px;
+    padding: 0;
+    padding-bottom: 2px;
 }
