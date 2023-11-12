@@ -4,13 +4,14 @@ const multer = require('multer');
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         var folder = new String();
-        if (file.fieldname.includes("product-img")) {
-            folder = path.join(__dirname, '../public/images/products');
+        if (file.fieldname.includes("pitch")) {
+            folder = path.join(__dirname, '../public/img/pitchs');
         } else {
-            folder = path.join(__dirname, '../public/images/users');
+            folder = path.join(__dirname, '../public/img/users');
         }
         cb(null, folder);
     },
+    
     filename: (req, file, cb) => {
         cb(null, `${Date.now()}_${file.fieldname}${path.extname(file.originalname)}`);
       }
@@ -28,4 +29,3 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 module.exports = uploadFile;
-

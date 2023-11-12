@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const { check } = require('express-validator');
 
 const router = express.Router();
 
@@ -42,7 +43,7 @@ router.delete('/:id', userController.destroy);
 
 /*** FORM TO LOGIN ***/ 
 router.get('/login', userController.login);
-router.post('/login', userController.loginProcess);
+router.post('/login', createUserValidations, userController.loginProcess);
 // FALTA PROCESO COMPLETO DE LOGIN
 
 

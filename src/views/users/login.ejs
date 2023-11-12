@@ -10,15 +10,27 @@
         <h2>Inicia sesion</h2>
     </div>
 
-        <form action="">
+    <form action="/user/login" method="POST" enctype="multipart/form-data" class="">
             <h3>Ingresá</h3>
         <div>
             <label for="email">Email</label><br>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>">
+                    
+            <% if (locals.errors && errors.email) { %>
+                <div>
+                    <%= errors.email.msg %>
+                </div> 
+            <% } %>
         </div>
         <div>
             <label for="password">Contraseña</label><br>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" value="<%= locals.oldData ? oldData.password : null %>">
+                    
+            <% if (locals.errors && errors.password) { %>
+                <div>
+                    <%= errors.password.msg %>
+                </div> 
+            <% } %>
         </div>
 
         <div>
