@@ -1,0 +1,14 @@
+.firstText{
+    margin-right: 10%;
+    text-align: end;
+    color: var(--secondText-color);
+}
+.imgProfile{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.imgProfile img{
+
+    width: 50%;
+}

@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 
 const router = express.Router();
 
-const logDBUserMiddleware = require('../middlewares/logDBUserMiddleware')
+// const logDBUserMiddleware = require('../middlewares/logDBUserMiddleware')
 const { createUserValidations } = require('../middlewares/userValidations');
 
 const multer = require('multer');
@@ -29,7 +29,7 @@ router.get('/', userController.index);
 
 /*** CREATE ONE USER ***/
 router.get('/register', userController.register);
-router.post('/register', uploadFile.single('imgPerfil'), createUserValidations, logDBUserMiddleware,  userController.newUser);
+router.post('/register', uploadFile.single('imgPerfil'), createUserValidations,  userController.newUser);
 
 /*** GET ONE USER ***/
 router.get('/profile/:id', userController.profile);

@@ -11,7 +11,7 @@ const userRoutes = require('./routes/user');
 const pitchsRoutes = require('./routes/pitchs');
 
 
-const logMiddleware = require('./middlewares/logMiddleware');
+// const logMiddleware = require('./middlewares/logMiddleware');
 
 
 // ************ express() ************
@@ -29,7 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(session({secret:"secret"}));
-app.use(logMiddleware);
+// app.use(logMiddleware);
 
 
 app.use('/', mainRoutes);
