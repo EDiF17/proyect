@@ -37,7 +37,7 @@
     width: 100%;
     text-wrap: nowrap;
     padding-bottom: 10px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .infoUsers p{
     box-sizing: content-box;
