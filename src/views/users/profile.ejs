@@ -1,22 +1,24 @@
-<%- include("../partials/head", {styles: ['header-navbar-footer', 'user-style'], title: 'Profile'}) %>
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'profile-users' ], title: 'Profile'}) %>
 <body>
     <main>
     <!-- Header -->
     <%- include("../partials/header") %>
     <!-- /Header -->
 
-        <h1> MI PERFIL </h1>
+        <h1 class="firstText"> Perfil </h1>
         <h2>
             <%= locals.user && user.firstName %>
+            <%= locals.user && user.lastName %>
         </h2>
-        <div>
+        <div class="imgProfile">
             <img src="/img/users/<%= locals.user && user.imgPerfil %>" alt="user-img">
         </div>
 
 
-        <p>
+        <div>
+            <p>Posicion: </p>
             <%= locals.user && user.position %>
-        </p>
+        </div>
 
 
 

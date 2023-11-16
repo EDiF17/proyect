@@ -1,7 +1,7 @@
 <%- include("../partials/head", {styles: ['header-navbar-footer', 'user-style'], title: 'Register'}) %>
 <body>
     <!-- Header -->
-    <%- include("../partials/header", { styles: ['', '']}) %>
+    <%- include("../partials/header") %>
     <!-- /Header -->
     <form action="/user/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
