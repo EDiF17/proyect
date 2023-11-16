@@ -33,6 +33,7 @@ router.post('/register', uploadFile.single('imgPerfil'), createUserValidations, 
 
 /*** GET ONE USER ***/
 router.get('/profile/:id', userController.profile);
+router.get('/profileLogin', userController.profileLogin)
 
 /*** EDIT ONE USER ***/
 router.get('/edit/:id', userController.edit);

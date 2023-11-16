@@ -70,5 +70,29 @@
         "position": "goalkeeper",
         "password": "$2a$10$5VFWkrgIouKZp1HSt3YGW.Ew7FIGSF/6FfPS0mP21gKm/poIuChuy",
         "imgPerfil": "user-1699639307666.jpg"
+    },
+    {
+        "id": 7,
+        "firstName": "qreq",
+        "lastName": "qer",
+        "email": "qlrq@gmail.com",
+        "phone": "3414441341",
+        "location": "qre",
+        "zone": "center",
+        "position": "goalkeeper",
+        "password": "$2a$10$IwMkSPl9uUGugNq8JYooDe2JXC6ljZj7D4nYQnVGCufYiYKgNUjDK",
+        "imgPerfil": "cancha-prueba.webp"
+    },
+    {
+        "id": 8,
+        "firstName": "wqe",
+        "lastName": "qewq",
+        "email": "qeq@gmail.com",
+        "phone": "2319994093",
+        "location": "weq",
+        "zone": "center",
+        "position": "defender",
+        "password": "$2a$10$9O60VDzQ5EL9q9PAu2pfoOCFHAvkCTdvQwH0bA54mHk7j1cJDcdPO",
+        "imgPerfil": "cancha-prueba.webp"
     }
 ]
