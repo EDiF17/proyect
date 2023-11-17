@@ -23,25 +23,36 @@ const controller = {
         return res.render('users/login');
         
     },
+
     loginProcess (req, res) {
-        // const users = getUsers();
-        // const errors = validationResult(req);  
-        // if (!errors.isEmpty()) {
-        //     return res.render('users/login', { 
-        //         errors: errors.mapped(),
-        //         oldData: req.body
-        //     });  
-        // } 
-        req.session.useres = {
+        const users = getUsers();
+        const user = users.find((element) => element.email === req.body.email);
+        
+        const errors = {
+                    unauthorized: {
+                        msg: 'Usuario y/o contraseña incorrecto'
+                    }
+                };
+        if (!user) {
+            return res.render('users/login', { errors });
+        };
+        if (!bcrypt.compareSync(req.body.password, user.password)) {
+            return res.render('users/login', { errors });
+        };
+        
+        req.session.user = {
             timestamp: Date.now(),
-            name: req.body.name
+            id: user.id,
+            firstName: user.firstName,
+            email: user.email
         }
-        return res.redirect("./profileLogin")
+        return res.redirect('/users/profile')
         },
-        profileLogin (req,res){
-            const {useres} = req.session
-            return res.render("users/profileLogin", {useres})
-        },
+
+    profileLogin (req,res){
+        const {user} = req.session
+        return res.render("users/profile", {user})
+    },
 
     register (req, res) {
         return res.render('users/register');
@@ -49,24 +60,19 @@ const controller = {
 
     newUser (req, res) {
         const users = getUsers();
-
         const errors = validationResult(req);
-        // res.send(errors);
-        
         if (!errors.isEmpty()) {
             return res.render('users/register', { 
                 errors: errors.mapped(),
                 oldData: req.body
             });
         } 
-
         const user = {
             id : users[users.length - 1] ? users[users.length - 1].id + 1 : 1,
             ...req.body,
             imgPerfil : req.file?.filename || 'cancha-prueba.webp',
             password : bcrypt.hashSync(req.body.password, 10),
         };
-        
         users.push(user);
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 4));
         return res.redirect('/user')
@@ -114,10 +120,8 @@ const controller = {
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
         res.redirect('/user');
         },
- 
-   
     }
-   
+
 
 
 module.exports = controller;

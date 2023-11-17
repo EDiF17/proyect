@@ -94,5 +94,17 @@
         "position": "defender",
         "password": "$2a$10$9O60VDzQ5EL9q9PAu2pfoOCFHAvkCTdvQwH0bA54mHk7j1cJDcdPO",
         "imgPerfil": "cancha-prueba.webp"
+    },
+    {
+        "id": 9,
+        "firstName": "emilio",
+        "lastName": "di fulvio",
+        "email": "emilio@gmail.com",
+        "phone": "3465656565",
+        "location": "Sarmiento 29571",
+        "zone": "north",
+        "position": "defender",
+        "password": "$2a$10$.3MaWVZZ15Pt/Rv/AwoFL.c0xnhPNDQa2KBSSF2B/gqUkUy5qvRI.",
+        "imgPerfil": "cancha-prueba.webp"
     }
 ]

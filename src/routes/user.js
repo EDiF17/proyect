@@ -44,8 +44,8 @@ router.delete('/:id', userController.destroy);
 
 /*** FORM TO LOGIN ***/ 
 router.get('/login', userController.login);
-router.post('/login', createUserValidations, userController.loginProcess);
-// FALTA PROCESO COMPLETO DE LOGIN
+router.post('/login', userController.loginProcess);
+
 
 
 module.exports = router;

@@ -13,8 +13,6 @@
 
                 <form action="/user/register" method="POST" enctype="multipart/form-data" class="">
                     <h4>Creá tu cuenta</h4>
-                
-                
                     <div>
                     <label for="firstName">Nombre</label><br>
                     <input 
@@ -75,14 +73,6 @@
                     <% } %>
                 </div>
                 <div>
-                    <label for="zone">Zona</label>
-                    <select name="zone" id="">
-                        <option value="center">Centro</option>
-                        <option value="south">Sur</option>
-                        <option value="north">Norte</option>
-                    </select>
-                </div>
-                <div>
                     <label for="position">Posicion</label>
                     <select name="position" id="">
                         <option value="goalkeeper">Arquero</option>
@@ -90,30 +80,44 @@
                         <option value="forward">Delantero</option>
                     </select>
                 </div>
-                <!-- <div>
-        <label for="">Habilidad destacada</label>
-        <select name="" id="">
-            <option value=""></option>
-        </select>
-    </div> -->
                 <div class="imgField">
                     <label for="imgPerfil">Imagen de perfil</label><br>
                     
                     <input type="file" name="imgPerfil" id="imgPerfil">
-                
+                    
                 </div>
                 <div>
                     <label for="password">Contraseña</label><br>
                     <input type="password" id="password" name="password" placeholder="">
                 </div>
-                <!-- <div>
-        <label for="password">Repetir contraseña</label><br>
-        <input type="password" id="password" name="password" placeholder="">
-    </div> -->
                 <div>
                     <button type="reset" id="reset">Borrar</button>
                     <button type="submit" id="submit">Enviar</button>
                 </div>
+
+                
+                <!-- IDEAS A DESARROLLAR  -->
+
+
+                <!-- <div>
+                    <label for="zone">Zona</label>
+                    <select name="zone" id="">
+                        <option value="center">Centro</option>
+                        <option value="south">Sur</option>
+                        <option value="north">Norte</option>
+                    </select>
+                </div> -->
+                <!-- <div>
+                    <label for="">Habilidad destacada</label>
+                    <select name="" id="">
+                        <option value=""></option>
+                    </select>
+                </div> -->
+                <!-- <div>
+                    <label for="password">Repetir contraseña</label><br>
+                    <input type="password" id="password" name="password" placeholder="">
+                </div> -->
+                
         </div>
     </form>
     </main>
