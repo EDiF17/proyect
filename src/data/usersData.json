@@ -106,5 +106,16 @@
         "position": "defender",
         "password": "$2a$10$.3MaWVZZ15Pt/Rv/AwoFL.c0xnhPNDQa2KBSSF2B/gqUkUy5qvRI.",
         "imgPerfil": "cancha-prueba.webp"
+    },
+    {
+        "id": 10,
+        "firstName": "Divo Mustafa",
+        "lastName": "Ragu",
+        "email": "divoragu@gmail.com",
+        "phone": "3412276177",
+        "location": "San Pedro",
+        "position": "defender",
+        "password": "$2a$10$JrEyo42REQfCZw0jmvInkubtvr1jAVOxfi7.ODuXKs2Kd8qCj0ncy",
+        "imgPerfil": "cancha-prueba.webp"
     }
 ]

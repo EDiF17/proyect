@@ -1,7 +1,10 @@
 .firstText{
     margin-right: 10%;
-    text-align: end;
+    text-align: center;
     color: var(--secondText-color);
+}
+.namesProfile{
+    margin-left: 15px;
 }
 .imgProfile{
     display: flex;
@@ -11,4 +14,55 @@
 .imgProfile img{
 
     width: 50%;
+}
+.positionProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.positionProfile p{
+    margin: 15px;
+    font-weight: 700;
+    text-decoration:underline;
+}
+.positionProfile div{
+    font-weight: 700 ;
+}
+.editDestroy{
+    margin-left: 5%;
+    margin-top: 20px;
+    display: flex;
+}
+.editDestroy a, button{
+    background-color: #fff;
+    padding: 5px;
+    filter: drop-shadow(2px 1px 1px #000000);
+    text-decoration: none;
+    color: #000000;
+}
+.editDestroy a:visited{
+    color: #000000;
+
+}
+.editDestroy button{
+    margin-left: 15px;
+}
+@media (min-width:768px) {
+    .namesProfile{
+        font-size: 35px;
+    }
+    .imgProfile img{
+
+        width: 50%;
+    }
+
+    .positionProfile p{
+       font-size: 25px;
+    }
+    .positionProfile div{
+        font-size: 25px;
+     }
+     .editDestroy{
+        margin-left: 2%;
+    }
 }

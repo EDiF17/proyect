@@ -1,4 +1,4 @@
-<%- include("../partials/head", {styles: ['header-navbar-footer', 'detail-style' ], title: 'Detail pitchs' }) %>
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'detail-pitchs' ], title: 'Detail pitchs' }) %>
 
     <body>
         <%- include("../partials/header") %>
@@ -44,13 +44,13 @@
                     </div>
                 </section>
                 <div class="buttonReserv">
-                    <a href=""><button>reservar</button></a>
+                    <a href=""><button>Reservar</button></a>
                 </div>
 
                 <div class="editDestroy">
-                    <a href="/pitchs/edit/<%= pitch.id %>" class="">EDITAR PRODUCTO</a>
+                    <a href="/pitchs/edit/<%= pitch.id %>" class="">Editar</a>
                     <form action="/pitchs/<%= pitch.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                        <button type="submit" class="">ELIMINAR</button>
+                        <button type="submit" class="">Eliminar</button>
                 </div>
             </section>
             <%- include("../partials/footer") %>
