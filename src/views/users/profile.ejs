@@ -6,7 +6,7 @@
     <!-- /Header -->
 
         <h1 class="firstText"> Perfil </h1>
-        <h2>
+        <h2 class="namesProfile">
             <%= locals.user && user.firstName %>
             <%= locals.user && user.lastName %>
         </h2>
@@ -15,9 +15,9 @@
         </div>
 
 
-        <div>
+        <div class="positionProfile">
             <p>Posicion: </p>
-            <%= locals.user && user.position %>
+            <div><%= locals.user && user.position %></div>
         </div>
 
 
@@ -25,13 +25,13 @@
 
 
         <div class="editDestroy">
-            <a href="/user/edit/<%= user.id %>" class="">EDITAR USUARIO</a>
-            <form action="/user/<%= user.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                <button type="submit" class="">ELIMINAR USUARIO</button>
+            <a href="/user/edit/<%= user.id %>" class="">Editar</a>
+            <form action="/user/<%= user.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="">Eliminar Usuario</button>
         </div>
 </main>
 <!-- footer  -->
-<%- include("../partials/footer"), {styles: ['', '']} %>
+<%- include("../partials/footer")%>
 <!-- /footer -->
 </body>
 </html>
