@@ -1,6 +1,9 @@
 @import url(variables.css);
-.sectionPitchs div img{
+.sectionPitchs  div {
     width: 100%;
+}
+.sectionPitchs  div img{
+    width: 50%;
 }
 .sectionPitchs{
     display: flex;

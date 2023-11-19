@@ -128,5 +128,15 @@
     "time": "de 10 a 17",
     "description": "",
     "price": "10"
+  },
+  {
+    "id": 15,
+    "img": "pitch-1700380466917.jpg",
+    "name": "Marote",
+    "location": "San Pedro",
+    "category": "centro",
+    "time": "10am - 10pm",
+    "description": "La mejor cancha",
+    "price": "5000"
   }
 ]

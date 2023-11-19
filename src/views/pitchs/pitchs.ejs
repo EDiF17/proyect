@@ -1,37 +1,48 @@
-<%- include("../partials/head", {styles: ['header-navbar-footer', 'pitchs-views'], title: 'Pitchs'}) %>
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'pitchs-views' ], title: 'Pitchs' }) %>
 
-<body>
-    <main>
-    <!-- Header -->
-    <%- include("../partials/header") %>
-    <!-- /Header -->
+    <body>
+        <main>
+            <!-- Header -->
+            <%- include("../partials/header") %>
+                <!-- /Header -->
 
 
-    <div>
-        <h2>ELEGÍ TU SEDE</h2>
-    </div>
+                <div class="titlePitchs">
+                    <h2>Elegí tu sede</h2>
+                </div>
 
-    <% locals.pitchs && pitchs.forEach(pitch => { %>
-    <section class="">
-        <a href="/pitchs/detail/<%= pitch.id %>">
-        <article class="">
-            <div><img src="/img/pitchs/<%= pitch.img %>" alt=""></div>
-            <div>
-                <h2><%=  pitch.name %></h2>
-                <p><%=  pitch.description %></p>
-            </div>
-            <div>               
-                <P><%=  pitch.location %></P>
-                <p><%=  pitch.time %></p>
-            </div>
-        </a>
-    </section>
-    <% }) %>
+                <% locals.pitchs && pitchs.forEach(pitch=> { %>
+                    <section class="allPitchs">
+                        <a href="/pitchs/detail/<%= pitch.id %>">
+                            <div class="imgPitch">
+                                <img src="/img/pitchs/<%= pitch.img %>" alt="">
+                            </div>
+                            <div class="descPitchs">
+                                <div>
+                                    <span>Nombre de la cancha:</span><br>
+                                    <%= pitch.name %>
+                                </div>
+                                <div>
+                                <span>Descripcion</span> <br>
+                                    <%= pitch.description %>
+                                </div>
+                                <div>
+                                    <span>Localidad</span><br>
+                                    <%= pitch.location %>
+                                </div>
+                                <div>
+                                    <span>Horarios</span> <br>
+                                    <%= pitch.time %>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                    <% }) %>
 
-</main>
-    <!-- footer  -->
-    <%- include("../partials/footer") %>
-    <!-- /footer -->
-</body>
+        </main>
+        <!-- footer  -->
+        <%- include("../partials/footer") %>
+            <!-- /footer -->
+    </body>
 
-</html>
+    </html>
