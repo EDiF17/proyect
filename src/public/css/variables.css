@@ -3,12 +3,27 @@
     --background-color: #35682d;
     --oneText-color: #00000000;
     --secondText-color: #fff;
-    --bgNavBar-color: rgba(0,0,0,0.3);
-    
-    
-
-    /* parametros tarjetas */
+    --bgNavBar-color: rgba(0,0,0, 0.3);
     --cardIcon-color: #3daa2d;
     --card-color: ;
     --spacing-padding: 10px;
+
+    /* paleta de colores IA */
+    --primary-100:#F7A700;
+    --primary-200:#d58b00;
+    --primary-300:#894c00;
+    --accent-100:#00A8E8;
+    --accent-200:#004d85;
+    --text-100:#FFFFFF;
+    --text-200:#e0e0e0;
+    --bg-100:#35682D;
+    --bg-200:#477a3e;
+    --bg-300:#639658;
+
+    /* Paleta hexacod */
+    --light-blue: #a8d5e2ff;
+    --orange-web: #f9a620ff;
+    --mustard: #ffd449ff;
+    --space-cadet: #2a324bff;
+    --hunter-green: #35682dff;
 }
