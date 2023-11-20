@@ -12,30 +12,30 @@
                 </div>
 
                 <% locals.pitchs && pitchs.forEach(pitch=> { %>
-                    <section class="allPitchs">
-                        <a href="/pitchs/detail/<%= pitch.id %>">
-                            <div class="imgPitch">
-                                <img src="/img/pitchs/<%= pitch.img %>" alt="">
-                            </div>
-                            <div class="descPitchs">
-                                <div>
-                                    <span>Nombre de la cancha:</span><br>
-                                    <%= pitch.name %>
+                        <section class="allPitchs">
+                                <div class="imgPitch">
+                                    <a href="/pitchs/detail/<%= pitch.id %>">
+                                        <img src="/img/pitchs/<%= pitch.img %>" alt="img-pitchs">
+                                    </a>
                                 </div>
-                                <div>
-                                <span>Descripcion</span> <br>
-                                    <%= pitch.description %>
+                                <div class="descPitchs">
+                                    <div>
+                                        <span>Nombre de la cancha:</span><br>
+                                        <%= pitch.name %>
+                                    </div>
+                                    <div>
+                                        <span>Descripcion</span> <br>
+                                        <%= pitch.description %>
+                                    </div>
+                                    <div>
+                                        <span>Localidad</span><br>
+                                        <%= pitch.location %>
+                                    </div>
+                                    <div>
+                                        <span>Horarios</span> <br>
+                                        <%= pitch.time %>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span>Localidad</span><br>
-                                    <%= pitch.location %>
-                                </div>
-                                <div>
-                                    <span>Horarios</span> <br>
-                                    <%= pitch.time %>
-                                </div>
-                            </div>
-                        </a>
                     </section>
                     <% }) %>
 

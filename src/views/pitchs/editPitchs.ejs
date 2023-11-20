@@ -1,4 +1,4 @@
-<%- include("../partials/head", {styles: ['header-navbar-footer', 'pitchs-style'], title: 'Edit pitchs'}) %>
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'edit-pitch'], title: 'Edit pitchs'}) %>
 <body>
 
     <!-- header  -->
@@ -32,6 +32,14 @@
             <div>
                 <label for="time">Horarios</label>
                 <input type="text" id="time" name="time" value="<%= pitchToEdit.time %>">
+            </div>
+            <div>
+                <label for="phone">Numero de telefono</label>
+                <input type="tel" name="phone" id="phone" value="<%= pitchToEdit.phone %>">
+            </div>
+            <div>
+                <label for="phone">Email</label>
+                <input type="email" name="email" id="email" value="<%= pitchToEdit.email %>">
             </div>
             <div>
                 <label for="description">Descripcion</label>
