@@ -12,7 +12,8 @@
                 </div>
 
                 <% locals.pitchs && pitchs.forEach(pitch=> { %>
-                        <section class="allPitchs">
+                        <section class="sectionPitchs">
+                            <article class="allPitchs">
                                 <div class="imgPitch">
                                     <a href="/pitchs/detail/<%= pitch.id %>">
                                         <img src="/img/pitchs/<%= pitch.img %>" alt="img-pitchs">
@@ -36,6 +37,7 @@
                                         <%= pitch.time %>
                                     </div>
                                 </div>
+                            </article>
                     </section>
                     <% }) %>
 

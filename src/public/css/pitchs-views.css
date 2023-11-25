@@ -2,16 +2,19 @@
 .titlePitchs {
     margin-left: 20px;
 }
+.sectionPitchs{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
 .allPitchs{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    margin: 5px;
     color: var(--secondText-color);
     text-decoration: none;
     background-color: var(--bgNavBar-color);
-    margin: 20px;
     border-radius: 10px 20px 10px 20px;
 }
 .imgPitch {
@@ -21,7 +24,7 @@
     align-items: center;
 }
 .imgPitch a img{
-    width: 100%;
+    width: 80%;
     object-fit: contain;
     border-radius: 10%;
 }
@@ -36,6 +39,11 @@
     font-weight: 700;
 }
 @media (min-width:768px) {
+    .sectionPitchs{
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
     .allPitchs{
         width: 45%;
     }
@@ -44,7 +52,7 @@
     }
     .imgPitch a img{
         margin-left: 2px;
-        width: 100%;
+        max-width: 50%;
         border-radius: 10%;
     }
 }
