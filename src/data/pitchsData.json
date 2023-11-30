@@ -138,5 +138,15 @@
     "time": "10am - 10pm",
     "description": "La mejor cancha",
     "price": "5000"
+  },
+  {
+    "id": 16,
+    "img": "cancha-prueba.webp",
+    "name": "qwe",
+    "location": "qwe",
+    "category": "norte",
+    "time": "qwe",
+    "description": "asdds",
+    "price": "asd"
   }
 ]

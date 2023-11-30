@@ -11,8 +11,8 @@
                     <h2>Elegí tu sede</h2>
                 </div>
 
+                <section class="sectionPitchs">
                 <% locals.pitchs && pitchs.forEach(pitch=> { %>
-                        <section class="sectionPitchs">
                             <article class="allPitchs">
                                 <div class="imgPitch">
                                     <a href="/pitchs/detail/<%= pitch.id %>">
@@ -38,8 +38,8 @@
                                     </div>
                                 </div>
                             </article>
+                            <% }) %>
                     </section>
-                    <% }) %>
 
         </main>
         <!-- footer  -->
