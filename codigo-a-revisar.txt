@@ -1,0 +1,7 @@
+// Localidades en creacion de usuarios //
+<input type="text" id="location" name="location" value="<%= locals.oldData ? oldData.location : null %>">
+<% if (locals.errors && errors.location) { %>
+    <div>
+        <%= errorslocation.msg %>
+    </div> 
+<% } %>

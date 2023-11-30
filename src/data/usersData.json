@@ -117,5 +117,18 @@
         "position": "defender",
         "password": "$2a$10$JrEyo42REQfCZw0jmvInkubtvr1jAVOxfi7.ODuXKs2Kd8qCj0ncy",
         "imgPerfil": "cancha-prueba.webp"
+    },
+    {
+        "id": 11,
+        "firstName": "Divo Mustafa",
+        "lastName": "Ragu",
+        "age": "30",
+        "genre": "Hombre",
+        "email": "divoragu@gmail.com",
+        "phone": "3412276177",
+        "location": "country_id",
+        "position": "Defensor",
+        "password": "$2a$10$mfF7jWEdh.tmb26eEPe7tOL3BeX1cnPk.Y6ZhUjbxqpgRkBi/vxji",
+        "imgPerfil": "cancha-prueba.webp"
     }
 ]

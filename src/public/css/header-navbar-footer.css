@@ -47,7 +47,7 @@ body {
 footer {
     background-color: var(--bgNavBar-color);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -56,7 +56,9 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: end;
+    align-items: start;
     margin: 5px;
+    margin-left: 25px;
     color: var(--secondText-color);
 }
 

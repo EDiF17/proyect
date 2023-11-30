@@ -42,7 +42,17 @@
                         </div> 
                     <% } %>
                 </div>
-
+                <div>
+                    <label for="age">Edad</label><br>
+                    <input type="number" id="age" name="age" value="<%= locals.oldData ? oldData.age : null %>">
+                </div>
+                <div>
+                    <label for="genre">Genero</label><br>
+                    <select name="genre" id="genre">
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                    </select>
+                </div>
                 <div>
                     <label for="email">Email</label><br>
                     <input type="email" id="email" name="email" value="<%= locals.oldData ? oldData.email : null %>">
@@ -64,20 +74,20 @@
                     <% } %>
                 </div>
                 <div>
-                    <label for="location">Ubicación</label><br>
-                    <input type="text" id="location" name="location" value="<%= locals.oldData ? oldData.location : null %>">
-                    <% if (locals.errors && errors.location) { %>
-                        <div>
-                            <%= errors.location.msg %>
-                        </div> 
-                    <% } %>
+                    <label for="country_id">Ciudad</label><br>
+                    <select name="location" id="country_id">
+                        <option value="1">Rosario</option>
+                        <option value="2">Baigorria</option>
+                        <option value="3">San Pedro</option>
+                    </select>
+                    
                 </div>
                 <div>
                     <label for="position">Posicion</label>
                     <select name="position" id="">
-                        <option value="goalkeeper">Arquero</option>
-                        <option value="defender">Defensor</option>
-                        <option value="forward">Delantero</option>
+                        <option value="Arquero">Arquero</option>
+                        <option value="Defensor">Defensor</option>
+                        <option value="Delantero">Delantero</option>
                     </select>
                 </div>
                 <div class="imgField">
@@ -90,6 +100,10 @@
                     <label for="password">Contraseña</label><br>
                     <input type="password" id="password" name="password" placeholder="">
                 </div>
+                <!-- <div>
+                    <label for="password">Repetir Contraseña</label><br>
+                    <input type="password" id="password" name="password" placeholder="">
+                </div> -->
                 <div>
                     <button type="reset" id="reset">Borrar</button>
                     <button type="submit" id="submit">Enviar</button>
