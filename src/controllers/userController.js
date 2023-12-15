@@ -78,7 +78,7 @@ const controller = {
             age: req.body.age,
             phone: req.body.phone,
             genre: req.body.genre,
-            countries_id: req.body.countries_id,
+            countries_id: req.body.location,
             positions_id: req.body.positions_id,
             roles_id: 3
         };
