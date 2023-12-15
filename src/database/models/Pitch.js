@@ -10,7 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+        Pitch.belongsTo(models.Country, {
+          foreignKey: 'countries_id',
+          as: 'countries'
+    });
     }
   }
   Pitch.init({
