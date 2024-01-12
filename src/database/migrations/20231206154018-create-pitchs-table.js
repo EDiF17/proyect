@@ -21,15 +21,11 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false
       },
-      hours: {
-        type: Sequelize.TEXT,
-        allowNull: false
-      },
       description: {
         type: Sequelize.TEXT,
         allowNull: false
       },
-      price: {
+      hours_price: {
         type: Sequelize.TEXT,
         allowNull: false
       },
