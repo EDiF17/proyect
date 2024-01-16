@@ -28,22 +28,21 @@ router.get('/', userController.index);
 
 /*** CREATE ONE USER ***/
 router.get('/register', userController.register);
-router.post('/register', uploadFile.single('imgPerfil'), createUserValidations,  userController.newUser);
+router.post('/register', uploadFile.single('img'), createUserValidations,  userController.newUser);
 
 /*** GET ONE USER ***/
-// router.get('/profile/:id', userController.profile);
-// router.get('/profileLogin', userController.profileLogin)
+router.get('/profile/:id', userController.profile);
 
 /*** EDIT ONE USER ***/
-// router.get('/edit/:id', userController.edit);
-// router.put('/:id', uploadFile.single('imgPerfil'), userController.update);
+router.get('/edit/:id', userController.edit);
+router.put('/:id', uploadFile.single('img'), userController.update);
 
 /*** DELETE ONE USER***/ 
-// router.delete('/:id', userController.destroy);
+router.delete('/:id', userController.destroy);
 
 /*** FORM TO LOGIN ***/ 
 router.get('/login', userController.login);
-// router.post('/login', userController.loginProcess);
+router.post('/login', userController.loginProcess);
 
 
 

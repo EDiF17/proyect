@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     type: DataTypes.TEXT,
     allowNull: false
   },
-  price_hours: {
+  hours_price: {
     type: DataTypes.NUMBER,
     allowNull: false
   },

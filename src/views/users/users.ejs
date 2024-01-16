@@ -11,24 +11,24 @@
         <article>
             <div class="imgId">
                 <a href="/user/profile/<%= user.id %>"><%= user.id %></a>
-                <img src="/img/users/<%= user.imgPerfil %>" alt="user-imgPerfil">
+                <img src="/img/users/<%= user.img %>" alt="user-imgPerfil">
             </div>
             <div class="infoUsers">
                 <div>
                     <p>Nombre</p>
-                    <%=  user.firstName %>
+                    <%=  user.first_name %>
                 </div>
                 <div>
                     <p>Posicion</p>
-                    <%=  user.position %>
+                    <%=  user.positions_id %>
                 </div>
                 <div>
                     <p>Apellido</p>
-                    <%=  user.lastName %>
+                    <%=  user.last_name %>
                 </div>
                 <div>
-                    <p>Zona frecuente</p>
-                    <%=  user.zone %>
+                    <p>Edad</p>
+                    <%=  user.age %>
                 </div>
             </div>
         </article>

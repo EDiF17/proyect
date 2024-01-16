@@ -6,53 +6,56 @@
     <!-- /header -->
 
     <main>
-        <form action="/pitchs/<%= pitchToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form action="/pitchs/<%= Pitch.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="name">Nombre de la sede</label>
-                <input type="text" id="name" name="name" value="<%= pitchToEdit.name %>">
+                <input type="text" 
+                id="name" 
+                name="name" 
+                value="<%= Pitch.name %>">
             </div>
-
-            <!-- UBICACION EXACTA  -->
             <div>
-                <label for="location">Ubicacion</label>
-                <input type="text" id="location" name="location" value="<%= pitchToEdit.location %>">
-            </div>
-            
-            <!-- UBICACION POR ZONAS /// SE PODRIA APLICAR PARA MOSTRAR ZONAS DE PREFERENCIA AL USUARIO  -->
-
-            <!-- <label for="category">Zona de la ciudad</label>
-            <select name="category" id="category">
-                <option value="centro">Centro</option>
-                <option value="norte">Norte</option>
-                <option value="sur">Sur</option>
-            </select> -->
-
-            <!-- VER EJS PARA SELECCION DE ZONAS  -->
-
-            <div>
-                <label for="time">Horarios</label>
-                <input type="text" id="time" name="time" value="<%= pitchToEdit.time %>">
+                <label for="countries_id">Ciudad</label><br>
+                <select name="countries_id" 
+                id="countries_id">
+                    <option value="1">Rosario</option>
+                    <option value="2">Baigorria</option>
+                    <option value="3">San Pedro</option>
+                </select>
             </div>
             <div>
                 <label for="phone">Numero de telefono</label>
-                <input type="tel" name="phone" id="phone" value="<%= pitchToEdit.phone %>">
+                <input type="tel" 
+                name="phone" 
+                id="phone" 
+                value="<%= Pitch.phone %>">
             </div>
             <div>
                 <label for="phone">Email</label>
-                <input type="email" name="email" id="email" value="<%= pitchToEdit.email %>">
+                <input type="email" 
+                name="email" 
+                id="email" 
+                value="<%= Pitch.email %>">
             </div>
             <div>
                 <label for="description">Descripcion</label>
-                <textarea name="description" id="description"><%= pitchToEdit.description %></textarea>
+                <textarea name="description" 
+                id="description">
+                <%= Pitch.description %>
+            </textarea>
             </div>
             <div>
-                <label for="price">Precio por hora</label>
-                <input type="text" id="price" name="price" value="<%= pitchToEdit.price %>">
+                <label for="hours_price">Precio por hora</label>
+                <input type="number" 
+                id="hours_price" 
+                name="hours_price" 
+                value="<%= Pitch.hours_price %>">
             </div>
             <div>
-                <!-- CONSULTAR SI LA IMGANEN SE PUEDE EDITAR TMB  -->
                 <label for="img">Imagen de Portada</label>
-                <input type="file" name="img" id="img"> 
+                <input type="file" 
+                name="img" 
+                id="img"> 
             </div>
             <div>
                 <button type="submit">Editar sede</button>

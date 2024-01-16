@@ -6,7 +6,9 @@ const { DATE } = require('sequelize');
 const { Op } = require('sequelize');
 
 const controller = {
-    
+
+    // INDEX
+
     async index(req, res) {
         try {
             const users = await db.User.findAll({
@@ -21,15 +23,16 @@ const controller = {
         }
     },
 
+    // LOGIN
+
     login (req, res) {
         return res.render('users/login');
-        
+
     },
 
-    // loginProcess (req, res) {
-    //     const users = getUsers();
-    //     const user = users.find((element) => element.email === req.body.email);
-        
+    // LOGIN PROCCESS
+    loginProcess (req, res) {
+
     //     const errors = {
     //                 unauthorized: {
     //                     msg: 'Usuario y/o contraseña incorrecto'
@@ -41,7 +44,7 @@ const controller = {
     //     if (!bcrypt.compareSync(req.body.password, user.password)) {
     //         return res.render('users/login', { errors });
     //     };
-        
+
     //     req.session.user = {
     //         timestamp: Date.now(),
     //         id: user.id,
@@ -49,37 +52,36 @@ const controller = {
     //         email: user.email
     //     }
     //     return res.redirect('/users/profile')
-    //     },
+    },
 
-    // profileLogin (req,res){
-    //     const {user} = req.session
-    //     return res.render("users/profile", {user})
-    // },
+    // REGISTER
 
     register (req, res) {
         return res.render('users/register');
     },
 
+    // NEW USER
+
     async newUser (req, res) {
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
-                return res.render('users/register', { 
+                return res.render('users/register', {
                     errors: errors.mapped(),
                     oldData: req.body
                 });
             }
         const newUser = {
-            first_name: req.body.firstName,
-            last_name: req.body.lastName,
-            email: req.body.email,
-            password: req.body.password,
-            img : req.file?.filename || 'cancha-prueba.webp',
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
             age: req.body.age,
-            phone: req.body.phone,
             genre: req.body.genre,
-            countries_id: req.body.location,
+            email: req.body.email,
+            phone: req.body.phone,
+            countries_id: req.body.countries_id,
             positions_id: req.body.positions_id,
+            img : req.file?.filename || 'cancha-prueba.webp',
+            password: req.body.password,
             roles_id: 3
         };
         db.User.create(newUser);
@@ -87,52 +89,53 @@ const controller = {
         } catch (error) {
             return res.status(500).send(error);
         }
-        }, 
-    
-    // profile (req, res) {
-    //     const users = getUsers();
-    //     const user = users.find(element => element.id == req.params.id);
-    //     if (!user){
-    //         return res.render('error', {    // CREAR VISTA EJS DE ERROR //
-    //             message : 'El usuario no existe', 
-    //                 error : {
-    //                     status : 404
-    //         },
-    //         path: req.url
-    //     });
-    // }
-    
-    // res.render('users/profile', { user });
-    // },
+        },
 
-    // edit (req, res) {
-    //     const users = getUsers();
-    //     const user = users.find(element => element.id == req.params.id);
-    //     return res.render('users/editUser', { userToEdit : user }); 
-    // },
+        // PROFILE 
 
-    // update (req, res) {
-    //     const users = getUsers();
-    //     const userIndex = users.findIndex(element => element.id == req.params.id);
-    //     const imgPerfil = req.file?.filename || users[userIndex].imgPerfil;
-    //     users[userIndex] = {
-    //         ...users[userIndex],   
-    //         imgPerfil,
-    //         ...req.body
-    //     };
-    //     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-    //     res.redirect('/user')
-    // },
+        async profile (req, res) {
+        try {
+            const user = await db.User.findByPk(req.params.id);
+            res.render('users/profile.ejs', { user });
+        } catch (error) {
+            res.status(500).send(error);
+            }
+        },
 
-    // async destroy (req, res) {
-    //     try {
-    //         await db.User.destroy({ where : { id : req.params.id}})
-    //     } catch (error) {
-    //         return res.status(500).send(error);
-    //     }
-    //     res.redirect('/users');
-    // }
-}
+        // EDIT
 
+        async edit(req, res) {
+            try {
+                const user = await db.User.findByPk(req.params.id);
+                return res.render('users/editUser.ejs', { User: user });
+            } catch (error) {
+                return res.status(500).send(error);
+            }
+        },
+
+        // UPDATE 
+
+        // A REVISAR 
+
+        async update(req, res) {
+            try {
+                await db.User.update({ ...req.body }, { where: { id: req.params.id } });
+                return res.redirect('/user');
+            } catch (error) {
+                return res.status(500).send(error);
+            }
+        },
+
+        // DESTROY 
+
+        async destroy (req, res) {
+            try {
+                await db.User.destroy({ where : { id : req.params.id}})
+            }      catch (error) {
+                return res.status(500).send(error);
+        }
+        res.redirect('/user');
+    }
+    };
 
 module.exports = controller;

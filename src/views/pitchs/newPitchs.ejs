@@ -7,42 +7,89 @@
 
     <main>
         <form action="/pitchs" method="POST" enctype="multipart/form-data">
+            
             <div>
                 <label for="name">Nombre de la sede</label>
-                <input type="text" id="name" name="name">
-            </div>
-
-            <!-- UBICACION EXACTA  -->
-            <div>
-                <label for="location">Ubicacion</label>
-                <input type="text" id="location" name="location">
+                <input type="text" 
+                id="name" 
+                name="name"
+                value="<%= locals.oldData ? oldData.name : null %>">
+                <% if (locals.errors && errors.name) { %>
+                    <div>
+                        <%= errors.name.msg %>
+                    </div>  
+                <% } %>
             </div>
             
-            <!-- UBICACION POR ZONAS /// SE PODRIA APLICAR PARA MOSTRAR ZONAS DE PREFERENCIA AL USUARIO  -->
-
-            <label for="category">Zona de la ciudad</label>
-            <select name="category" id="category">
-                <option value="centro">Centro</option>
-                <option value="norte">Norte</option>
-                <option value="sur">Sur</option>
-            </select>
+            <div>
+                <label for="countries_id">Ciudad</label><br>
+                <select name="countries_id" 
+                id="countries_id">
+                    <option value="1">Rosario</option>
+                    <option value="2">Baigorria</option>
+                    <option value="3">San Pedro</option>
+                </select>
+            </div>
 
             <div>
-                <label for="time">Horarios</label>
-                <input type="text" id="time" name="time">
+                <label for="phone">Teléfono</label>
+                <input type="number" 
+                id="phone" 
+                name="phone"
+                value="<%= locals.oldData ? oldData.phone : null %>">
+                <% if (locals.errors && errors.phone) { %>
+                    <div>
+                        <%= errors.phone.msg %>
+                    </div>  
+                <% } %>
             </div>
+            
+            <div>
+                <label for="email">Email</label>
+                <input type="email" 
+                id="email" 
+                name="email"
+                value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <div>
+                        <%= errors.email.msg %>
+                    </div>  
+                <% } %>
+            </div>
+            
             <div>
                 <label for="description">Descripcion</label>
-                <textarea name="description" id="description"></textarea>
+                <textarea name="description" 
+                id="description"
+                value="<%= locals.oldData ? oldData.description : null %>">
+            </textarea>
+            <% if (locals.errors && errors.description) { %>
+                <div>
+                    <%= errors.description.msg %>
+                </div>  
+            <% } %>
             </div>
+            
             <div>
-                <label for="price">Precio por hora</label>
-                <input type="text" id="price" name="price">
+                <label for="hours_price">Precio por hora</label>
+                <input type="number" 
+                id="hours_price" 
+                name="hours_price"
+                value="<%= locals.oldData ? oldData.hours_price : null %>">
+                <% if (locals.errors && errors.hours_price) { %>
+                    <div>
+                        <%= errors.hours_price.msg %>
+                    </div>  
+                <% } %>
             </div>
+            
             <div>
                 <label for="img">Imagen de Portada</label>
-                <input type="file" name="img" id="img">
+                <input type="file" 
+                name="img" 
+                id="img">
             </div>
+            
             <div>
                 <button type="submit">Guardar nueva sede</button>
             </div>
