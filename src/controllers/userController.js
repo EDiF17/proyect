@@ -84,7 +84,7 @@ const controller = {
             password: req.body.password,
             roles_id: 3
         };
-        db.User.create(newUser);
+        await db.User.create(newUser);
         return res.redirect('/')
         } catch (error) {
             return res.status(500).send(error);

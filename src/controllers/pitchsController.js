@@ -46,7 +46,7 @@ const controller = {
             hours_price: req.body.hours_price,
             img : req.file?.filename || 'cancha-prueba.webp',
         };
-        db.Pitch.create(newPitch);
+        await db.Pitch.create(newPitch);
         return res.redirect('/')
         } catch (error) {
             return res.status(500).send(error);

@@ -3,20 +3,20 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class PitchsSchedules extends Model {
+  class PitchSchedul extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      PitchsSchedules.belongsTo(models.Status, {
+      PitchSchedul.belongsTo(models.Status, {
         foreignKey: 'status_id',
         as: 'status'
     });
     }
   }
-  PitchsSchedules.init({
+  PitchSchedul.init({
     start_date : {
       type: DataTypes.DATE,
       allowNull: false
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false
     },
-    pitchs_id: {
+    pitches_id: {
       type: DataTypes.INTEGER,
     },
     status_id: {
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
 },
     {
     sequelize,
-    modelName: 'PitchsSchedules',
+    modelName: 'PitchSchedul',
 });
-  return PitchsSchedules;
+  return PitchSchedul;
 };
