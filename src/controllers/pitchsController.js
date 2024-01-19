@@ -9,18 +9,18 @@ const controller = {
     
     //ALL PITCHS 
 
-    // async index(req, res) {
-    //         try {
-    //             const pitchs = await db.Pitch.findAll({
-    //                 include: [
-    //                     'countries',
-    //                 ]
-    //             });
-    //             res.render('pitchs/pitchs', { pitchs });
-    //         } catch (error) {
-    //             res.status(500).send(error);
-    //         }
-    //     },
+    async index(req, res) {
+            try {
+                const pitchs = await db.Pitch.findAll({
+                    include: [
+                        'countries',
+                    ]
+                });
+                res.render('pitchs/pitchs', { pitchs });
+            } catch (error) {
+                res.status(500).send(error);
+            }
+        },
     
     // FORM TO CREATE PITCH 
     create (req, res) {
@@ -55,48 +55,64 @@ const controller = {
         
     // DETAIL FROM ONE PITCH 
 
-    // async detail (req, res) {
-    //     try {
-    //         const pitch = await db.Pitch.findByPk(req.params.id);
-    //         res.render('pitchs/detail', { pitch });
-    //     } catch (error) {
-    //         res.status(500).send(error);
-    //         }
-    //     },
+    async detail (req, res) {
+        try {
+            const pitch = await db.Pitch.findByPk(req.params.id);
+            res.render('pitchs/detail', { pitch });
+        } catch (error) {
+            res.status(500).send(error);
+            }
+        },
 
     // FORM TO EDIT 
 
-    // async edit(req, res) {
-    //     try {
-    //         const pitch = await db.Pitch.findByPk(req.params.id);
-    //         return res.render('pitchs/editPitchs', { Pitch: pitch });
-    //     } catch (error) {
-    //         return res.status(500).send(error);
-    //     }
-    // },
+    async edit(req, res) {
+        try {
+            const pitch = await db.Pitch.findByPk(req.params.id);
+            return res.render('pitchs/editPitchs', { Pitch: pitch });
+        } catch (error) {
+            return res.status(500).send(error);
+        }
+    },
 
     // METHOD TO UPDATE 
-    // async update(req, res) {
-    //     try {
-    //         await db.Pitch.update({ ...req.body }, { where: { id: req.params.id } });
-    //         return res.redirect('/pitchs');
-    //     } catch (error) {
-    //         return res.status(500).send(error);
-    //     }
-    // },
+    async update(req, res) {
+        try {
+            await db.Pitch.update({ ...req.body }, { where: { id: req.params.id } });
+            return res.redirect('/pitchs');
+        } catch (error) {
+            return res.status(500).send(error);
+        }
+    },
 
 
     // DESTROY  
 
-//     async destroy (req, res) {
-//         try {
-//             await db.Pitch.destroy({ where : { id : req.params.id}})
-//         }      catch (error) {
-//             return res.status(500).send(error);
-//     }
-//     res.redirect('/user');
-// }
+    async destroy (req, res) {
+        try {
+            await db.Pitch.destroy({ where : { id : req.params.id}})
+        }      catch (error) {
+            return res.status(500).send(error);
+    }
+    res.redirect('/');
+},
 
+    // RESERVE
+
+    async reserve (req, res) {
+        try {
+            const newReserve = {
+                start_date: req.body.start_date,
+                end_date: req.body.end_date,
+                pitches_id: req.params.id,
+                status_id: 1,
+            };
+            await db.PitchSchedul.create(newReserve);
+            return res.redirect('/users/profile', { PitchSchedul: newReserve })
+        } catch (error) {
+            return res.status(500).send(error);
+        }
+    }
 }
 
 module.exports = controller;

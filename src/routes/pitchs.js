@@ -23,22 +23,26 @@ const pitchsController = require('../controllers/pitchsController');
 // const uploadFile = require('../middlewares/multerMiddleware');
 
 /*** GET ALL PITCHS ***/ 
-//router.get('/', pitchsController.index);
+router.get('/', pitchsController.index);
 
 /*** CREATE ONE PITCH ***/
 router.get('/create', pitchsController.create);
 router.post('/', uploadFile.single('img'), pitchsController.newPitch);
 
 /*** GET ONE PITCH ***/
-// router.get('/detail/:id', pitchsController.detail);
+router.get('/detail/:id', pitchsController.detail);
+
+/*** RESERVE ***/ 
+router.post('/', pitchsController.reserve);
 
 /*** EDIT ONE PITCH ***/ 
-// router.get('/edit/:id', pitchsController.edit);
-// router.put('/:id', uploadFile.single('img'), pitchsController.update);
+router.get('/edit/:id', pitchsController.edit);
+router.put('/:id', uploadFile.single('img'), pitchsController.update);
 
 
 /*** DELETE ONE PRODUCT***/ 
-// router.delete('/:id', pitchsController.destroy);
+router.delete('/:id', pitchsController.destroy);
+
 
 
 module.exports = router;
