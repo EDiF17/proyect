@@ -31,3 +31,5 @@ https://trello.com/b/aTy9QrvO/proyect
 Mi nombre es Divo Mustafa Ragu Tengo 30 años. Desde hace años estoy interesado en el area informatica y de desarrollo. Tengo conocimientos en HTML, CSS3 y SASS. Quiero reforzar mi conocimientos y poder aprender mas en el area de programacion Front-End.
 
 Mi nombre es Emilio Di Fulvio, tengo 28 años, y soy oriundo de la localidad de Carreras. Estoy graduado en Higiene y Seguridad, aunque desde hace varios años soy deportista profesional. Me gusta aprender nuevas habilidades continuamente, y desde hace tiempo empecé a incursionar en el área de la programación, sin conocimientos previos. Tengo mucho entusiasmo en poder desarrollar las nuevas habilidades y conocimientos que brinda este curso para lograr ser un desarrollador web.
+
+Mi nombre es Uriel Waigandt, tengo 22 años y soy de Granadero Baigorria. Soy técnico informático y productor musical. Desde chiquito me gustó la informática y siempre me gustó aprender cosas nuevas, en este caso quiero aprender a desarrollar un sitio web
