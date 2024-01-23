@@ -3,7 +3,7 @@ const path = require('path');
 
 const router = express.Router();
 
-// const logDBPitchMiddleware = require('../middlewares/logDBPitchMiddleware')
+const { createPitchsValidations } = require('../middlewares/pitchsValidation');
 
 const multer = require('multer');
 const storage = multer.diskStorage({
@@ -20,20 +20,19 @@ const uploadFile = multer({ storage });
 
 const pitchsController = require('../controllers/pitchsController');
 
-// const uploadFile = require('../middlewares/multerMiddleware');
 
 /*** GET ALL PITCHS ***/ 
 router.get('/', pitchsController.index);
 
 /*** CREATE ONE PITCH ***/
 router.get('/create', pitchsController.create);
-router.post('/', uploadFile.single('img'), pitchsController.newPitch);
+router.post('/', uploadFile.single('img'), createPitchsValidations, pitchsController.newPitch);
 
 /*** GET ONE PITCH ***/
 router.get('/detail/:id', pitchsController.detail);
 
 /*** RESERVE ***/ 
-router.post('/', pitchsController.reserve);
+router.post('/reserve/:id', pitchsController.reserve);
 
 /*** EDIT ONE PITCH ***/ 
 router.get('/edit/:id', pitchsController.edit);

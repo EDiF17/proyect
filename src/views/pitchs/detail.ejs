@@ -39,23 +39,25 @@
                 
                 <!-- FORMULARIO DE RESERVA  -->
 
-                <form action="/pitchs" method="POST" enctype="multipart/form-data" class="">
+                <form action="/pitchs/reserve/<%= locals.pitch && pitch.id %>" method="POST" enctype="multipart/form-data" class="">
                 <section class="dateHourPitch">
                     <article class="datePitch">
-                        <label for="start_date">Fecha</label>
-                            <select name="start_date" id="start_date">
-                                <option value="">28/10/2023 - 13:00</option>
-                        </select>
-                    </article>
-                    </section>
-                    <section class="dateHourPitch">
-                        <article class="datePitch">
-                            <label for="end_date">Fecha</label>
-                                <select name="end_date" id="end_date">
-                                    <option value="">28/10/2023 - 14:00</option>
+                        <label for="init_date">Dia</label>
+                        <input type="date"  name="init_date" id="init_date">
+                            <label for="start_date">Inicio</label>
+                                <select name="start_date" id="start_date">
+                                    <option value="13:00:00" >13:00:00</option>
+                                    <option value="14:00:00" >14:00:00</option>
+                                    <option value="15:00:00" >15:00:00</option>
                             </select>
-                        </article>
-                    </section>
+                            <label for="end_date">Finalización</label>
+                                <select name="end_date" id="end_date">
+                                    <option value="14:00:00">14:00:00</option>
+                                    <option value="15:00:00">15:00:00</option>
+                                    <option value="16:00:00">16:00:00</option>
+                            </select>
+                    </article>
+                </section>
                 <div class="buttonReserv">
                     <button type="submit">Reservar</button>
                 </div>

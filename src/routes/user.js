@@ -3,7 +3,6 @@ const path = require('path');
 
 const router = express.Router();
 
-// const logDBUserMiddleware = require('../middlewares/logDBUserMiddleware')
 const { createUserValidations } = require('../middlewares/userValidations');
 
 const multer = require('multer');
@@ -20,8 +19,6 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage }) 
 
 const userController = require('../controllers/userController');
-
-// const uploadFile = require('../middlewares/multerMiddleware');
 
 /*** GET ALL USERS ***/
 router.get('/', userController.index);
