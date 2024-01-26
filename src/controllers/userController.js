@@ -4,6 +4,7 @@ const db = require('../database/models')
 const { validationResult } = require('express-validator');
 const { DATE } = require('sequelize');
 const { Op } = require('sequelize');
+const bcrypts = require('bcryptjs');
 
 const controller = {
 
@@ -31,20 +32,32 @@ const controller = {
     },
 
     // LOGIN PROCCESS
-    loginProcess (req, res) {
-
-    //     const errors = {
-    //                 unauthorized: {
-    //                     msg: 'Usuario y/o contraseña incorrecto'
-    //                 }
-    //             };
-    //     if (!user) {
-    //         return res.render('users/login', { errors });
-    //     };
-    //     if (!bcrypt.compareSync(req.body.password, user.password)) {
-    //         return res.render('users/login', { errors });
-    //     };
-
+    async loginProcess (req, res) {
+        try {
+            const user = await db.User.findOne({ where: { email: req.body.email } });
+            console.log(req.body.password);
+            const errors = {
+                            unauthorized: {
+                                msg: 'Usuario y/o contraseña incorrecto'
+                            }
+                        };
+            if (!user) {
+                return res.render('users/login', { errors })
+            };
+            if (!bcrypts.compareSync(req.body.password, user.password)){
+                return res.render('users/login', { errors })
+            };
+            return res.redirect('/');
+            // profile: (req, res) => {
+		
+            //     return res.render('profile', {
+            //         user: req.session.userLogged
+            //     });
+        
+            // },
+        } catch (error) {
+            return res.status(500).send(error);
+        }
     //     req.session.user = {
     //         timestamp: Date.now(),
     //         id: user.id,
@@ -96,7 +109,7 @@ const controller = {
         async profile (req, res) {
         try {
             const user = await db.User.findByPk(req.params.id);
-            res.render('users/profile.ejs', { user });
+            res.render('users/profile', { user });
         } catch (error) {
             res.status(500).send(error);
             }
@@ -115,7 +128,6 @@ const controller = {
 
         // UPDATE 
 
-        // A REVISAR 
 
         async update(req, res) {
             try {

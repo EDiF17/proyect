@@ -18,11 +18,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   PitchSchedul.init({
     start_date : {
-      type: DataTypes.DATE,
+      type: DataTypes.DATE(6),
       allowNull: false
     },
     end_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATE(6),
       allowNull: false
     },
     pitches_id: {

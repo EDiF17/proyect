@@ -39,8 +39,7 @@ router.delete('/:id', userController.destroy);
 
 /*** FORM TO LOGIN ***/ 
 router.get('/login', userController.login);
-
-// router.post('/login', userController.loginProcess);
+router.post('/login', userController.loginProcess); 
 
 
 

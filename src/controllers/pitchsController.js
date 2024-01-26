@@ -101,17 +101,16 @@ const controller = {
 
     async reserve (req, res) {
         try {
-            console.log((req.body.init_date));
-            console.log((req.body.start_date));
+            console.log(req.body);
             const newReserve = {
-                start_date: req.body.init_date,
-                end_date: req.body.init_date,
+                start_date: req.body.start_date,
+                end_date:  req.body.end_date,
                 pitches_id: req.params.id,
                 status_id: 1,
             };
             
             await db.PitchSchedul.create(newReserve);
-            return res.redirect('/', { PitchSchedul: newReserve })
+            return res.redirect('/')
         } catch (error) {
             return res.status(500).send(error);
         }

@@ -39,23 +39,11 @@
                 
                 <!-- FORMULARIO DE RESERVA  -->
 
-                <form action="/pitchs/reserve/<%= locals.pitch && pitch.id %>" method="POST" enctype="multipart/form-data" class="">
+                <form action="/pitchs/reserve/<%= locals.pitch && pitch.id %>" method="POST">
                 <section class="dateHourPitch">
                     <article class="datePitch">
-                        <label for="init_date">Dia</label>
-                        <input type="date"  name="init_date" id="init_date">
-                            <label for="start_date">Inicio</label>
-                                <select name="start_date" id="start_date">
-                                    <option value="13:00:00" >13:00:00</option>
-                                    <option value="14:00:00" >14:00:00</option>
-                                    <option value="15:00:00" >15:00:00</option>
-                            </select>
-                            <label for="end_date">Finalización</label>
-                                <select name="end_date" id="end_date">
-                                    <option value="14:00:00">14:00:00</option>
-                                    <option value="15:00:00">15:00:00</option>
-                                    <option value="16:00:00">16:00:00</option>
-                            </select>
+                        <input type="datetime-local" step="1800" name="start_date" id="start_date">
+                        <input type="datetime-local" step="1800" name="end_date" id="end_date">
                     </article>
                 </section>
                 <div class="buttonReserv">

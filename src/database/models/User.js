@@ -21,9 +21,9 @@ module.exports = (sequelize, DataTypes) => {
       as: 'positions'
   });
 
-    User.belongsTo(models.Role, {
-    foreignKey: 'roles_id',
-    as: 'roles'
+      User.belongsTo(models.Role, {
+      foreignKey: 'roles_id',
+      as: 'roles'
 });
 
     }
