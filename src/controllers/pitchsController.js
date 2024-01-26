@@ -110,7 +110,7 @@ const controller = {
             };
             
             await db.PitchSchedul.create(newReserve);
-            return res.redirect('/')
+            return res.redirect('/games')
         } catch (error) {
             return res.status(500).send(error);
         }
