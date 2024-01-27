@@ -30,7 +30,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(session({
-    secret: process.env.SECRET 
+    secret: process.env.SECRET
 }));
 app.use(cookieParser());
 // app.use(logMiddleware);

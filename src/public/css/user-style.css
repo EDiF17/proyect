@@ -25,4 +25,20 @@ h4 {
 form div label{
     font-size: 14px;
     font-weight: 700;
+    margin-left: 22px;
 }
+
+button, input, optgroup, select, textarea
+{
+  margin-left: 1vw;
+  display: flex;
+}
+
+form div
+{
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 44px;
+}
+
