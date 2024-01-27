@@ -10,6 +10,8 @@ const cookieParser = require('cookie-parser');
 const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/user');
 const pitchsRoutes = require('./routes/pitchs');
+const gamesRoutes = require('./routes/games');
+
 
 
 // const logMiddleware = require('./middlewares/logMiddleware');
@@ -39,6 +41,8 @@ app.use(cookieParser());
 app.use('/', mainRoutes);
 app.use('/user', userRoutes);
 app.use('/pitchs', pitchsRoutes);
+app.use('/games', gamesRoutes);
+
 
 
 const port = process.env.PORT || 3000;

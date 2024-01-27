@@ -1,0 +1,30 @@
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'detail-pitchs' ], title: 'Detail games' }) %>
+
+    <body>
+        <%- include("../partials/header") %>
+            <section class="sectMain">
+                <article class="container">
+                    <div class="namePitch">
+                        <h2>
+                            Partido Seleccionado
+                        </h2>
+                    </div>
+                    <div class="imgPitch">
+                        <div class="descriptionPitch">
+                            <p>
+                                <%= locals.game && game.start_date %>
+                            </p>
+                        </div>
+                        <div class="descriptionPitch">
+                            <p>
+                                <%= locals.game && game.end_date %>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                
+            </section>
+            <%- include("../partials/footer") %>
+    </body>
+
+    </html>

@@ -47,7 +47,7 @@ const controller = {
             if (!bcrypts.compareSync(req.body.password, user.password)){
                 return res.render('users/login', { errors })
             };
-            return res.redirect('/');
+            return res.redirect('/pitchs');
             // profile: (req, res) => {
 		
             //     return res.render('profile', {
@@ -98,7 +98,7 @@ const controller = {
             roles_id: 3
         };
         await db.User.create(newUser);
-        return res.redirect('/')
+        return res.redirect('/user/login')
         } catch (error) {
             return res.status(500).send(error);
         }
@@ -120,7 +120,7 @@ const controller = {
         async edit(req, res) {
             try {
                 const user = await db.User.findByPk(req.params.id);
-                return res.render('users/editUser.ejs', { User: user });
+                return res.render('users/editUser', { User: user });
             } catch (error) {
                 return res.status(500).send(error);
             }
