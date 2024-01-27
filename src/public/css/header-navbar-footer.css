@@ -13,10 +13,23 @@ body {
 .navBar{
     background-color: var(--bgNavBar-color);
 }
-.buttonLogin{
-    margin-right: 15px;
+ .buttonLogin{
+    margin-right: 0px;
     text-wrap: nowrap;
 }
+.button-Login
+{
+    background-color: #25491f;
+    margin-top: 5px;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    width: 139px;
+    height: 38px;
+}
+.button-Login:hover {
+    background: #ffffff;
+    color: green !important;
+  }
 .navMobile{
     display: flex;
     align-items: center;
