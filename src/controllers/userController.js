@@ -35,26 +35,23 @@ const controller = {
     async loginProcess (req, res) {
         try {
             const user = await db.User.findOne({ where: { email: req.body.email } });
-            console.log(req.body.password);
             const errors = {
-                            unauthorized: {
-                                msg: 'Usuario y/o contraseña incorrecto'
-                            }
-                        };
+                unauthorized: {
+                    msg: 'Usuario y/o contraseña incorrecto'
+                }
+            };
             if (!user) {
                 return res.render('users/login', { errors })
             };
             if (!bcrypts.compareSync(req.body.password, user.password)){
                 return res.render('users/login', { errors })
             };
-            return res.redirect('/pitchs');
-            // profile: (req, res) => {
-		
-            //     return res.render('profile', {
-            //         user: req.session.userLogged
-            //     });
-        
-            // },
+            
+            if (user) {
+                delete user.password;
+                req.session.userLogged = user;
+                return res.redirect('/user/profile');
+            }
         } catch (error) {
             return res.status(500).send(error);
         }
@@ -84,6 +81,20 @@ const controller = {
                     oldData: req.body
                 });
             }
+        
+        const userInDB = await db.User.findOne({ where: { email: req.body.email } });
+
+        if (userInDB) {
+            return res.render('users/register', {
+                errors: {
+                    unauthorized: {
+                        msg: 'Este email ya está registrado'
+                    }
+                },
+                oldData: req.body
+            });
+        }
+
         const newUser = {
             first_name: req.body.first_name,
             last_name: req.body.last_name,
@@ -105,15 +116,19 @@ const controller = {
         },
 
         // PROFILE 
-
-        async profile (req, res) {
-        try {
-            const user = await db.User.findByPk(req.params.id);
-            res.render('users/profile', { user });
-        } catch (error) {
-            res.status(500).send(error);
-            }
-        },
+        profile: (req, res) => {
+                return res.render('users/profile', {
+                    user: req.session.userLogged
+                });
+            },
+        // async profile (req, res) {
+        // try {
+        //     const user = await db.User.findByPk(req.params.id);
+        //     res.render('users/profile', { user });
+        // } catch (error) {
+        //     res.status(500).send(error);
+        //     }
+        // },
 
         // EDIT
 

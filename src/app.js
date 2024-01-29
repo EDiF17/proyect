@@ -12,19 +12,12 @@ const userRoutes = require('./routes/user');
 const pitchsRoutes = require('./routes/pitchs');
 const gamesRoutes = require('./routes/games');
 
-
-
-// const logMiddleware = require('./middlewares/logMiddleware');
-
-
 // ************ express() ************
 const app = express();
-
 
 // ************ Template Engine ************
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
 
 // ************ Middlewares ************
 app.use(express.static(path.join(__dirname, 'public')));
@@ -32,18 +25,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(session({
-    secret: process.env.SECRET 
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
 }));
 app.use(cookieParser());
-// app.use(logMiddleware);
-
 
 app.use('/', mainRoutes);
 app.use('/user', userRoutes);
 app.use('/pitchs', pitchsRoutes);
 app.use('/games', gamesRoutes);
-
-
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

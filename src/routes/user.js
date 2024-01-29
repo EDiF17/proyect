@@ -28,7 +28,7 @@ router.get('/register', userController.register);
 router.post('/register', uploadFile.single('img'), createUserValidations,  userController.newUser);
 
 /*** GET ONE USER ***/
-router.get('/profile/:id', userController.profile);
+router.get('/profile', userController.profile);
 
 /*** EDIT ONE USER ***/
 router.get('/edit/:id', userController.edit);
