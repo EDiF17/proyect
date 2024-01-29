@@ -5,19 +5,19 @@
     <%- include("../partials/header") %>
     <!-- /Header -->
 
-        <h1 class="firstText"> Perfil </h1>
+        <h1 class="firstText"> Bienvenido a tu perfil </h1>
         <h2 class="namesProfile">
             <%= locals.user?.first_name %>
-            <%= locals.user && user.last_name %>
+            <%= locals.user?.last_name %>
         </h2>
         <div class="imgProfile">
-            <img src="/img/users/<%= locals.user && user.img %>" alt="user-img">
+            <img src="/img/users/<%= locals.user?.img %>" alt="user-img">
         </div>
 
 
         <div class="positionProfile">
             <p>Posicion: </p>
-            <div><%= locals.user && user.positions_id %></div>
+            <div><%= locals.user?.positions_id %></div>
         </div>
 
         <div>

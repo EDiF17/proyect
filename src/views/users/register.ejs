@@ -74,8 +74,12 @@
                     <% if (locals.errors && errors.email) { %>
                         <div>
                             <p><%= errors.email.msg %></p>
+                            
                         </div> 
-                    <% } %>
+                        <% } %>
+                        <% if (locals.errors?.unauthorized) { %>
+                            <p style="color: red;"><%= errors.unauthorized.msg %></p>
+                        <% }%>
                 </div>
                 <div>
                     <label for="phone" class="numbertel">Número de contacto</label><br>
