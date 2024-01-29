@@ -18,11 +18,36 @@ h3{
     font-size: 20px;
     text-align: center;
     text-wrap: wrap;
-}
+    color: #000;
+    text-decoration-line: underline;}
+    
 h4 {
     font-size: 18px;
+    color: white;
+    text-decoration-line: underline;
+    margin-left: 23px;
 }
+
 form div label{
     font-size: 14px;
     font-weight: 700;
+    margin-left: 22px;
 }
+
+button, input, optgroup, select, textarea
+{
+    margin-left: 1vw;
+    display: flex;
+    border-radius: 5px;
+    border: 0px;
+    margin-top: 3px;
+}
+
+form div
+{
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 29px;
+}
+
