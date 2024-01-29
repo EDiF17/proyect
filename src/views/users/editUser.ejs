@@ -3,64 +3,84 @@
     <!-- Header -->
     <%- include("../partials/header") %>
     <!-- /Header -->
-    <form action="/user/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form action="/user/<%= User.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
         <div>
-            <label for="firstName">Nombre</label><br>
-            <input type="text" id="firstName" name="firstName" value="<%= userToEdit.firstName %>">
+            <label for="first_name">Nombre</label><br>
+            <input type="text" 
+            id="first_name" 
+            name="first_name" 
+            value="<%= User.first_name %>">
         </div>
         <div>
-            <label for="lastName">Apellido</label><br>
-            <input type="text" id="lastName" name="lastName" value="<%= userToEdit.lastName %>">
+            <label for="last_name">Apellido</label><br>
+            <input type="text" 
+            id="last_name" 
+            name="last_name" 
+            value="<%= User.last_name %>">
+        </div>
+        <div>
+            <label for="age">Edad</label><br>
+            <input type="number"
+            id="age" 
+            name="age" 
+            value="<%= User.age %>">
+        </div>
+        <div>
+            <!-- DESARRROLLAR OPCION SELECCIONADA CON ANTERIORIDAD  -->
+            <label for="genre">Genero</label><br>
+            <select name="genre"
+            id="genre">
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
+            </select>
         </div>
         <div>
             <label for="email">Email</label><br>
-            <input type="email" id="email" name="email" value="<%= userToEdit.email %>">
+            <input type="email" 
+            id="email" 
+            name="email" 
+            value="<%= User.email %>">
         </div>
         <div>
             <label for="phone">Número de contacto</label><br>
-            <input type="number" id="phone" name="phone" value="<%= userToEdit.phone %>">
+            <input type="number" 
+            id="phone" 
+            name="phone" 
+            value="<%= User.phone %>">
         </div>
         <div>
-            <label for="location">Ubicación</label><br>
-            <input type="text" id="location" name="location" value="<%= userToEdit.location %>">
-        </div>
-        <div>
-            <label for="zone">Zona</label>
-            <select name="zone" id="">
-                <option value="center">Centro</option>
-                <option value="south">Sur</option>
-                <option value="north">Norte</option>
+            <!-- DESARRROLLAR OPCION SELECCIONADA CON ANTERIORIDAD  -->
+            <label for="countries_id">Ciudad</label><br>
+            <select name="countries_id" 
+            id="countries_id">
+                <option value="1">Rosario</option>
+                <option value="2">Baigorria</option>
+                <option value="3">San Pedro</option>
             </select>
         </div>
         <div>
-            <label for="position">Posicion</label>
-            <select name="position" id="">
-                <option value="goalkeeper">Arquero</option>
-                <option value="defender">Defensor</option>
-                <option value="forward">Delantero</option>
+            <!-- DESARRROLLAR OPCION SELECCIONADA CON ANTERIORIDAD  -->
+            <label for="positions_id">Posicion</label>
+            <select name="positions_id" 
+            id="positions_id">
+                <option value="1">Arquero</option>
+                <option value="2">Defensor</option>
+                <option value="3">Delantero</option>
             </select>
         </div>
-        <!-- <div>
-<label for="">Habilidad destacada</label>
-<select name="" id="">
-    <option value=""></option>
-</select>
-</div> -->
         <div class="imgField">
-            <label for="imgPerfil">Imagen de perfil</label><br>
-            
-            <input type="file" name="imgPerfil" id="imgPerfil">
-        
+            <label for="img">Imagen de perfil</label><br>
+            <input type="file" 
+            name="img" 
+            id="img">
         </div>
         <div>
             <label for="password">Contraseña</label><br>
-            <input type="password" id="password" name="password">
+            <input type="password" 
+            id="password" 
+            name="password">
         </div>
-        <!-- <div>
-<label for="password">Repetir contraseña</label><br>
-<input type="password" id="password" name="password" placeholder="">
-</div> -->
         <div>
             <button type="reset" id="reset">Borrar</button>
             <button type="submit" id="submit">Enviar</button>

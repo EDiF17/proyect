@@ -1,0 +1,38 @@
+<%- include("../partials/head", {styles: ['header-navbar-footer', 'users-views' ], title: 'Últimos partidos'}) %>
+
+<body>
+    <!-- Header -->
+    <%- include("../partials/header") %>
+    <!-- /Header -->
+    <h2>Últimos partidos</h2>
+
+    <% locals.games && games.forEach(game => { %>
+    <section class="cardProfile">
+        <article>
+            <div class="infoUsers">
+                <div>
+                    <p>Comienzo</p>
+                    <%=  game.start_date %>
+                </div>
+                <div>
+                    <p>Finalizacion</p>
+                    <%=  game.end_date %>
+                </div>
+                <div>
+                    <a href="/user"><button type="submit">Invitar amigos</button></a>
+                </div>
+            </div>
+        </article>
+    </section>
+    <% }) %>
+
+    <!-- APLICAR EJS PARA VER LISTADO DE USUARIOS REGISTRADOS  -->
+
+
+
+    <!-- footer  -->
+    <%- include("../partials/footer") %>
+    <!-- /footer -->
+</body>
+
+</html>

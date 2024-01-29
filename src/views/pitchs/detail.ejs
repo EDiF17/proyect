@@ -16,36 +16,43 @@
                                 <%= locals.pitch && pitch.description %>
                             </p>
                         </div>
+                        <div class="descriptionPitch">
+                            <p>
+                                <%= locals.pitch && pitch.phone %>
+                            </p>
+                        </div>
+                        <div class="descriptionPitch">
+                            <p>
+                                <%= locals.pitch && pitch.email %>
+                            </p>
+                        </div>
+                        <div class="descriptionPitch">
+                            <p>
+                                <%= locals.pitch && pitch.countries_id%>
+                            </p>
+                        </div>
+                        <div class="pricePitch">
+                            <p>Precio: <%= locals.pitch && pitch.hours_price %></p>
+                        </div>
                     </div>
                 </article>
+                
+                <!-- FORMULARIO DE RESERVA  -->
+
+                <form action="/pitchs/reserve/<%= locals.pitch && pitch.id %>" method="POST">
                 <section class="dateHourPitch">
                     <article class="datePitch">
-                        <label for="dates">Fecha</label>
-                        <select name="datesPitch" id="dates">
-                            <option value="">28/10/2023</option>
-                            <option value="">28/10/2023</option>
-                            <option value="">28/10/2023</option>
-                            <option value="">28/10/2023</option>
-                            <option value="">28/10/2023</option>
-                        </select>
+                        <input type="datetime-local" step="1800" name="start_date" id="start_date">
+                        <input type="datetime-local" step="1800" name="end_date" id="end_date">
                     </article>
-                    <article class="hourPitch">
-                        <label for="hours">Horario</label>
-                        <select name="hoursPitchs" id="hours">
-                            <option value="">13:00</option>
-                            <option value="">13:00</option>
-                            <option value="">13:00</option>
-                            <option value="">13:00</option>
-                            <option value="">13:00</option>
-                        </select>
-                    </article>
-                    <div class="pricePitch">
-                        <p>Precio: <%= locals.pitch && pitch.price %></p>
-                    </div>
                 </section>
                 <div class="buttonReserv">
-                    <a href=""><button>Reservar</button></a>
+                    <button type="submit">Reservar</button>
                 </div>
+                </form>
+                    
+                </section>
+                
 
                 <div class="editDestroy">
                     <a href="/pitchs/edit/<%= pitch.id %>" class="">Editar</a>

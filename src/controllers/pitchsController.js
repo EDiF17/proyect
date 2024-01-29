@@ -1,20 +1,26 @@
-const fs = require('fs');
-const path = require('path');
 
-const pitchsFilePath = path.join(__dirname, '../data/pitchsData.json');
+const db = require('../database/models')
 
-function getPitchs() {
-    const pitchs = JSON.parse(fs.readFileSync(pitchsFilePath, 'utf-8'));
-    return pitchs;
-}
+const { validationResult } = require('express-validator');
+const { DATE } = require('sequelize');
+const { Op } = require('sequelize');
 
 const controller = {
     
-    // SHOW ALL PITCHS 
-    index (req, res) {
-        const pitchs = getPitchs();
-        return res.render('pitchs/pitchs', { pitchs });
-    },
+    //ALL PITCHS 
+
+    async index(req, res) {
+            try {
+                const pitchs = await db.Pitch.findAll({
+                    include: [
+                        'countries',
+                    ]
+                });
+                res.render('pitchs/pitchs', { pitchs });
+            } catch (error) {
+                res.status(500).send(error);
+            }
+        },
     
     // FORM TO CREATE PITCH 
     create (req, res) {
@@ -22,67 +28,93 @@ const controller = {
     },
 
     // METHOD TO NEW PITCH 
-    newPitch (req, res) {
-        const pitchs = getPitchs();
-        // const img = req.file.filename || 'cancha-prueba.webp'
-        const pitchsToCreate = {
-            id : pitchs[pitchs.length - 1].id + 1,
-            img: req.file?.filename || 'cancha-prueba.webp', 
-            ...req.body
+    async newPitch (req, res) {
+        try {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.render('pitchs/newPitchs', {
+                    errors: errors.mapped(),
+                    oldData: req.body
+                });
+            }
+        const newPitch = {
+            name: req.body.name,
+            countries_id: req.body.countries_id,
+            phone: req.body.phone,
+            email: req.body.email,
+            description: req.body.description,
+            hours_price: req.body.hours_price,
+            img : req.file?.filename || 'cancha-prueba.webp',
         };
-        
-        console.log(req.file)
-        pitchs.push(pitchsToCreate);
-        fs.writeFileSync(pitchsFilePath, JSON.stringify(pitchs, null, 2));
-        res.redirect('/pitchs');
-    },
-    
-    // DETAIL FROM ONE PITCH 
-    detail (req, res) {
-        const pitchs = getPitchs();
-        const pitch = pitchs.find(element => element.id == req.params.id);
-            if (!pitch){
-                return res.render('error', {    // CREAR VISTA EJS DE ERROR //
-                    message : 'La cancha no existe', 
-                        error : {
-                            status : 404
-                },
-                path: req.url
-            });
+        await db.Pitch.create(newPitch);
+        return res.redirect('/')
+        } catch (error) {
+            return res.status(500).send(error);
         }
+        },
         
-        res.render('pitchs/detail', { pitch });
-    },
+    // DETAIL FROM ONE PITCH 
+
+    async detail (req, res) {
+        try {
+            const pitch = await db.Pitch.findByPk(req.params.id);
+            res.render('pitchs/detail', { pitch });
+        } catch (error) {
+            res.status(500).send(error);
+            }
+        },
 
     // FORM TO EDIT 
-    edit (req, res) {
-        const pitchs = getPitchs();
-        const pitch = pitchs.find(element => element.id == req.params.id);
-        return res.render('pitchs/editPitchs', { pitchToEdit : pitch }); 
+
+    async edit(req, res) {
+        try {
+            const pitch = await db.Pitch.findByPk(req.params.id);
+            return res.render('pitchs/editPitchs', { Pitch: pitch });
+        } catch (error) {
+            return res.status(500).send(error);
+        }
     },
 
     // METHOD TO UPDATE 
-    update (req, res) {
-        const pitchs = getPitchs();
-        const pitchIndex = pitchs.findIndex(element => element.id == req.params.id);
-        const img = req.file?.filename || pitchs[pitchIndex].img;
-        pitchs[pitchIndex] = {
-            ...pitchs[pitchIndex],   
-            img,
-            ...req.body
-        };
-        fs.writeFileSync(pitchsFilePath, JSON.stringify(pitchs, null, 2));
-        res.redirect('/pitchs')
+    async update(req, res) {
+        try {
+            await db.Pitch.update({ ...req.body }, { where: { id: req.params.id } });
+            return res.redirect('/pitchs');
+        } catch (error) {
+            return res.status(500).send(error);
+        }
     },
 
-    destroy (req, res) {
-        const pitchs = getPitchs();
-        const pitchIndex = pitchs.findIndex(element => element.id == req.params.id);
-        pitchs.splice(pitchIndex, 1);
-        fs.writeFileSync(pitchsFilePath, JSON.stringify(pitchs, null, 2));
-        res.redirect('/pitchs');
-    }
 
+    // DESTROY  
+
+    async destroy (req, res) {
+        try {
+            await db.Pitch.destroy({ where : { id : req.params.id}})
+        }      catch (error) {
+            return res.status(500).send(error);
+    }
+    res.redirect('/');
+},
+
+    // RESERVE
+
+    async reserve (req, res) {
+        try {
+            console.log(req.body);
+            const newReserve = {
+                start_date: req.body.start_date,
+                end_date:  req.body.end_date,
+                pitches_id: req.params.id,
+                status_id: 1,
+            };
+            
+            await db.PitchSchedul.create(newReserve);
+            return res.redirect('/games')
+        } catch (error) {
+            return res.status(500).send(error);
+        }
+    }
 }
 
 module.exports = controller;

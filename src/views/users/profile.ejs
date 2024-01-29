@@ -7,19 +7,23 @@
 
         <h1 class="firstText"> Perfil </h1>
         <h2 class="namesProfile">
-            <%= locals.user && user.firstName %>
-            <%= locals.user && user.lastName %>
+            <%= locals.user?.first_name %>
+            <%= locals.user && user.last_name %>
         </h2>
         <div class="imgProfile">
-            <img src="/img/users/<%= locals.user && user.imgPerfil %>" alt="user-img">
+            <img src="/img/users/<%= locals.user && user.img %>" alt="user-img">
         </div>
 
 
         <div class="positionProfile">
             <p>Posicion: </p>
-            <div><%= locals.user && user.position %></div>
+            <div><%= locals.user && user.positions_id %></div>
         </div>
 
+        <div>
+            <p>TURNOS</p>
+            <!-- COMPLETAR CON INFORMACION DE TABLA PITCHES_SCHEDULES -->
+        </div>
 
 
 
