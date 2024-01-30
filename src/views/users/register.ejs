@@ -23,7 +23,7 @@
                     class="<%= locals.errors && errors.first_name ? 'is-invalid' : null  %>">
                     
                     <% if (locals.errors && errors.first_name) { %>
-                        <div>
+                        <div style="color: red;">
                             <%= errors.first_name.msg %>
                         </div>  
                     <% } %>
@@ -37,7 +37,7 @@
                     value="<%= locals.oldData ? oldData.last_name : null %>">
                     
                     <% if (locals.errors && errors.last_name) { %>
-                        <div>
+                        <div style="color: red;">
                             <%= errors.last_name.msg %>
                         </div> 
                     <% } %>
@@ -51,7 +51,7 @@
                     value="<%= locals.oldData ? oldData.age : null %>">
                     
                     <% if (locals.errors && errors.age) { %>
-                        <div>
+                        <div style="color: red;">
                             <%= errors.age.msg %>
                         </div> 
                     <% } %>
@@ -72,7 +72,7 @@
                     value="<%= locals.oldData ? oldData.email : null %>">
                     
                     <% if (locals.errors && errors.email) { %>
-                        <div>
+                        <div style="color: red;">
                             <p><%= errors.email.msg %></p>
                             
                         </div> 
@@ -91,7 +91,7 @@
                     value="<%= locals.oldData ? oldData.phone : null %>">
                     
                     <% if (locals.errors && errors.phone) { %>
-                        <div class="phonediv">
+                        <div class="phonediv" style="color: red;">
                             <%= errors.phone.msg %>
                         </div> 
                     <% } %>

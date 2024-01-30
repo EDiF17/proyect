@@ -30,7 +30,7 @@
                     >
                 </div>
                 <% if (locals.errors?.unauthorized) { %>
-                    <p style="color: red;"><%= errors.unauthorized.msg %></p>
+                    <p style="color: red;" class="error-login"><%= errors.unauthorized.msg %></p>
                 <% }%>
                 <div>
                     <button type="reset" id="reset" class="button-Login">Borrar</button>
