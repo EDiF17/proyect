@@ -32,6 +32,10 @@
                 <% if (locals.errors?.unauthorized) { %>
                     <p style="color: red;"><%= errors.unauthorized.msg %></p>
                 <% }%>
+                
+                <div><input class="checkbox" type="checkbox" name="remember_me"><h5> Recordar mi cuenta</h5>
+                </div>
+                
                 <div>
                     <button type="reset" id="reset">Borrar</button>
                     <button type="submit" id="submit">Enviar</button>

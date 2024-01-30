@@ -1,9 +1,7 @@
 function guestMiddleware(req, res, next) {
-    const { user } = req.query;
-    if (!user) {
-        return res.send('El Usuario debe estar logueado!');
+    if (req.session.userLogged) {
+        return res.redirect('/user/profile');
     }
-    req.user = user;
     next();
 }
 

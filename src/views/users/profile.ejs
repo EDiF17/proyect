@@ -5,11 +5,10 @@
     <%- include("../partials/header") %>
     <!-- /Header -->
 
-        <h1 class="firstText"> Bienvenido a tu perfil </h1>
-        <h2 class="namesProfile">
-            <%= locals.user?.first_name %>
-            <%= locals.user?.last_name %>
-        </h2>
+        <h1 class="firstText"> Que bueno verte de nuevo, <%= locals.user?.first_name %></h1>
+        <!-- <h2 class="namesProfile">
+            
+        </h2> -->
         <div class="imgProfile">
             <img src="/img/users/<%= locals.user?.img %>" alt="user-img">
         </div>

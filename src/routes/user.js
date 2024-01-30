@@ -17,14 +17,14 @@ const storage = multer.diskStorage({
 });
 
 const uploadFile = multer({ storage }) 
-
+const guestMiddleware = require('../middlewares/guestMiddleware');
 const userController = require('../controllers/userController');
 
 /*** GET ALL USERS ***/
 router.get('/', userController.index);
 
 /*** CREATE ONE USER ***/
-router.get('/register', userController.register);
+router.get('/register', guestMiddleware, userController.register);
 router.post('/register', uploadFile.single('img'), createUserValidations,  userController.newUser);
 
 /*** GET ONE USER ***/
@@ -38,7 +38,7 @@ router.put('/:id', uploadFile.single('img'), userController.update);
 router.delete('/:id', userController.destroy);
 
 /*** FORM TO LOGIN ***/ 
-router.get('/login', userController.login);
+router.get('/login', guestMiddleware, userController.login);
 router.post('/login', userController.loginProcess); 
 
 
@@ -47,5 +47,4 @@ module.exports = router;
 
 
 
-// const guestMiddleware = require('../middlewares/guestMiddleware');
 // const { createUserValidation } = require('../middlewares/userValidations');
