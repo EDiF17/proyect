@@ -43,6 +43,17 @@
     box-sizing: content-box;
     text-wrap: nowrap;
     margin-bottom: 2px;
-    padding: 0;
-    padding-bottom: 2px;
 }
+.friendsbutton{
+    padding: 5px;
+    filter: drop-shadow(2px 1px 1px #000000);
+    text-decoration: none;
+    color: #000000;
+    border: 0px;
+    border-radius: 3px;
+    background-color: rgba(3, 73, 3, 0.589);
+  }
+  .friendsbutton:hover {
+    background: #ffffff;
+    color: green !important;
+  }

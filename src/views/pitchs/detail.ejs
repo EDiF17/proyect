@@ -46,8 +46,8 @@
                         <input type="datetime-local" step="1800" name="end_date" id="end_date">
                     </article>
                 </section>
-                <div class="buttonReserv">
-                    <button type="submit">Reservar</button>
+                <div >
+                    <button type="submit" class="buttonReserv">Reservar</button>
                 </div>
                 </form>
                     
@@ -55,9 +55,9 @@
                 
 
                 <div class="editDestroy">
-                    <a href="/pitchs/edit/<%= pitch.id %>" class="">Editar</a>
+                    <a href="/pitchs/edit/<%= pitch.id %>" class="edit-destroy-button">Editar</a>
                     <form action="/pitchs/<%= pitch.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                        <button type="submit" class="">Eliminar</button>
+                        <button type="submit" class="edit-destroy-button">Eliminar</button>
                 </div>
             </section>
             <%- include("../partials/footer") %>

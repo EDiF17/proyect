@@ -42,17 +42,38 @@
     margin-top: 20px;
     display: flex;
 }
-.editDestroy a, button{
+.edit-destroy-button{
     background-color: #fff;
     padding: 5px;
     filter: drop-shadow(2px 1px 1px #000000);
     text-decoration: none;
     color: #000000;
+    border: 0px;
+    border-radius: 3px;
+    background-color: #25491f;
 }
-.editDestroy a:visited{
+.edit-destroy-button{
     color: #000000;
-
 }
-.editDestroy button{
-    margin-left: 15px;
+.edit-destroy-button{
+    margin-left: 8px;
 }
+.edit-destroy-button:hover {
+    background: #ffffff;
+    color: green !important;
+  }
+  .buttonReserv{
+    margin-left: 48%;
+    background-color: #fff;
+    padding: 5px;
+    filter: drop-shadow(2px 1px 1px #000000);
+    text-decoration: none;
+    color: #000000;
+    border: 0px;
+    border-radius: 3px;
+    background-color: #c0d3d6;
+  }
+  .buttonReserv:hover {
+    background: #ffffff;
+    color: green !important;
+  }
