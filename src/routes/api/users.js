@@ -8,4 +8,7 @@ router.get('/users', usersAPIController.list);
 
 router.get('/users/:id', usersAPIController.detail);
 
+// router.get('/search', usersAPIController.search);
+
+
 module.exports = router;

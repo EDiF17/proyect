@@ -5,119 +5,106 @@ const Op = db.Sequelize.Op;
 const pitchsAPIController = {
     'list': async (req, res) => {
         const count = await db.Pitch.count();
-        // const categories = await db.Category.findAll();
+        const countries = await db.Country.findAll();
 
-        // const countByCategory = {};
-        // for (const category of categories) {
-        //     const categoryName = category.name;
-        //     const categoryId = category.id;
-        //     const categoryCount = await db.Product.count({ where: { category_id: categoryId } });
-        //     countByCategory[categoryName] = categoryCount;
-        // }
+        const countByCountry = {};
+        for (const country of countries) {
+            const countryName = country.name;
+            const countryId = country.id;
+            const countryCount = await db.Pitch.count({ where: { countries_id: countryId } });
+            countByCountry[countryName] = countryCount;
+        }
 
-        // const products = await db.Pitch.findAll({
-        //     attributes: ['id', 'name', 'description'],
-        //     include: [{
-        //         model: db.Category,
-        //         as: 'category',
-        //         attributes: ['name']
-        //     }]
-        // }
-        // )
+        const pitchs = await db.Pitch.findAll({
+            attributes: ['id', 'name', 'description', 'phone', 'email', 'hours_price'],
+            include: [{
+                model: db.Country,
+                as: 'countries',
+                attributes: ['name']
+            }]
+        }
+        )
         ;
 
-        // const productArray = products.map(product => {
-        //     const detailUrl = `/api/products/${product.id}`;
-        //     const categoryName = product.category ? product.category.name : 'N/A';
-        //     return {
-        //         id: product.id,
-        //         name: product.name,
-        //         description: product.description,
-        //         category: categoryName,
-        //         detail: detailUrl
-        //     };
-        // });
-
-    //     const result = {
-    //         count: count,
-    //         countByCategory: countByCategory,
-    //         products: productArray
-    //     };
-
-    //     res.json(result);
-    // 
-},
-
-    'detail': async (req, res) => {
-        const product = await db.Pitch.findByPk(req.params.id, {
-            // include: [
-            //     { association: 'kind' },
-            //     { association: 'category' },
-            //     { association: 'discount' },
-            //     { association: 'user' },
-            //     { association: 'product_image' }
-            // ]
+        const pitchsArray = pitchs.map(pitch => {
+            const detailUrl = `/api/pitchs/${pitch.id}`;
+            const countryName = pitch.countries ? pitch.countries.name : 'N/A';
+            return {
+                id: pitch.id,
+                name: pitch.name,
+                description: pitch.description,
+                phone: pitch.phone,
+                email: pitch.email,
+                hours_price: pitch.hours_price,
+                country: countryName,
+                detail: detailUrl
+            };
         });
 
-        // if (!product) {
-        //     return res.status(404).json({ error: 'El producto no existe' });
-        // }
+        const result = {
+            count: count,
+            countByCountryy: countByCountry,
+            pitchs: pitchsArray
+        };
 
-        // const mainImage = product.mainImage;
+        res.json(result);
+},
 
-        // const productColors = await db.ProductColor.findAll({
-        //     where: { productId: req.params.id },
-        // });
+    // 'detail': async (req, res) => {
+    //     const pitch = await db.Pitch.findByPk(req.params.id, {
+    //         include: [
+    //             { association: 'countries' },
+    //         ]
+    //     });
 
-        // const colorIds = productColors.map(color => color.colorId);
+    //     if (!pitch) {
+    //         return res.status(404).json({ error: 'La cancha no existe' });
+    //     }
+        detail: async (req, res) => {
+            try {
+                const pitchId = req.params.id;
+                const pitch = await db.Pitch.findByPk(pitchId, {
+                include: [
+                    { model: db.Country, as: "countries" },
+                ],
+            });
+        
+                const pitchDetail = {
+                id: pitch.id,
+                name: pitch.name,
+                description: pitch.description,
+                phone: pitch.phone,
+                email: pitch.email,
+                hours_price: pitch.hours_price,
+                country: pitch.countries.name,
+            };
 
-        // const colors = await db.Color.findAll({
-        //     where: { id: colorIds },
-        //     attributes: ['name'],
-        // });
+                res.json(pitchDetail);
+            } catch (error) {
+                res.status(500).json({
+                status: 500,
+                error: error.message,
+            });
+            }
+        },
 
-        // const availableColors = colors.map(color => color.name);
-
-        // const secondaryImages = product.product_image
-        //     .filter(image => image.productId === req.params.id)
-        //     .map(image => image.url);
-
-        // const material = product.material_id == null ? product.material_id : product.kind.name;
-
-        // const result = {
-        //     id: product.id,
-        //     name: product.name,
-        //     description: product.description,
-        //     price: product.price,
-        //     inStock: product.inStock,
-        //     measure: product.measure,
-        //     flavor: product.flavor,
-        //     fragrance: product.fragrance,
-        //     size: product.size,
-        //     pet: product.pet,
-        //     mainImage: `/images/products/${mainImage}`,
-        //     secondaryImages: secondaryImages,
-        //     discount: product.discount,
-        //     material: material,
-        //     category: product.category.name,
-        //     color: availableColors,
-        //     user: product.user
-        // };
-
-        // res.json(result);
-    },
-
-    'search': (req, res) => {
-        db.Pitch
-            .findAll({
-                where: {
-                    name: {[Op.like]: '%' + req.query.keyword + '%'}
-                }
-            })
-            .then(products => {
-                return res.status(200).json(products);
-            })
+    // 'search': (req, res) => {
+    //     db.Pitch
+    //         .findAll({
+    //             where: {
+    //                 name: {[Op.like]: '%' + req.query.keyword + '%'}
+    //             }
+    //         })
+    //         .then(products => {
+    //             return res.status(200).json(products);
+    //         })
     }
-}
 
 module.exports = pitchsAPIController;
+
+
+
+
+
+        //         // Formatear la fecha y hora
+        //         const formattedDateTime = `${hours}:${minutes}:${seconds} hs - ${day}/${month}/${year}`;
