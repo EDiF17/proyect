@@ -101,7 +101,6 @@ const controller = {
 
     async reserve (req, res) {
         try {
-            console.log(req.body);
             const newReserve = {
                 start_date: req.body.start_date,
                 end_date:  req.body.end_date,

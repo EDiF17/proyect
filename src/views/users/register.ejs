@@ -20,7 +20,8 @@
                     id="first_name" 
                     name="first_name" 
                     value="<%= locals.oldData ? oldData.first_name : null %>"
-                    class="<%= locals.errors && errors.first_name ? 'is-invalid' : null  %>">
+                    class="<%= locals.errors && errors.first_name ? 'is-invalid' : null  %>"
+                    autocomplete="">
                     
                     <% if (locals.errors && errors.first_name) { %>
                         <div style="color: red;">

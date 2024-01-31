@@ -147,7 +147,7 @@ const controller = {
         async update(req, res) {
             try {
                 await db.User.update({ ...req.body }, { where: { id: req.params.id } });
-                return res.redirect('/user');
+                return res.redirect('/user/profile');
             } catch (error) {
                 return res.status(500).send(error);
             }
@@ -162,7 +162,13 @@ const controller = {
                 return res.status(500).send(error);
         }
         res.redirect('/user');
-    }
+    }, 
+
+        logout: (req, res) => {
+            req.session.destroy();
+            console.log(req.session);
+            return res.redirect('/');
+        } 
     };
 
 module.exports = controller;

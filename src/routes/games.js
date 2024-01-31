@@ -5,9 +5,12 @@ const router = express.Router();
 
 const gamesController = require('../controllers/gamesController');
 
+const authMiddleware = require('../middlewares/authMiddleware');
+
+
 
 /*** GET ALL GAMES ***/ 
-router.get('/', gamesController.index);
+router.get('/', authMiddleware, gamesController.index);
 
 
 /*** GET ONE GAME ***/

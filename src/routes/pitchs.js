@@ -19,6 +19,8 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 const pitchsController = require('../controllers/pitchsController');
+const authMiddleware = require('../middlewares/authMiddleware');
+
 
 
 /*** GET ALL PITCHS ***/ 
@@ -32,7 +34,7 @@ router.post('/', uploadFile.single('img'), createPitchsValidations, pitchsContro
 router.get('/detail/:id', pitchsController.detail);
 
 /*** RESERVE ***/ 
-router.post('/reserve/:id', pitchsController.reserve);
+router.post('/reserve/:id', authMiddleware, pitchsController.reserve);
 
 /*** EDIT ONE PITCH ***/ 
 router.get('/edit/:id', pitchsController.edit);
