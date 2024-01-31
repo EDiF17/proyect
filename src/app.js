@@ -5,12 +5,15 @@ const path = require('path');
 const methodOverride =  require('method-override');
 const session = require("express-session");
 const cookieParser = require('cookie-parser');
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 // ************ Route System require ************
 const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/user');
 const pitchsRoutes = require('./routes/pitchs');
 const gamesRoutes = require('./routes/games');
+const apiPitchs = require('./routes/api/pitchs');
+const apiUsers = require('./routes/api/users');
 
 // ************ express() ************
 const app = express();
@@ -30,11 +33,14 @@ app.use(session({
     saveUninitialized: false,
 }));
 app.use(cookieParser());
+app.use(userLoggedMiddleware);
 
 app.use('/', mainRoutes);
 app.use('/user', userRoutes);
 app.use('/pitchs', pitchsRoutes);
 app.use('/games', gamesRoutes);
+app.use('/api', apiUsers);
+app.use('/api', apiPitchs);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

@@ -24,7 +24,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 
 /*** GET ALL PITCHS ***/ 
-router.get('/', pitchsController.index);
+router.get('/', authMiddleware, pitchsController.index);
 
 /*** CREATE ONE PITCH ***/
 router.get('/create', pitchsController.create);

@@ -7,7 +7,6 @@
                 </div>
                 <div class="logo">
                     <img src="/img/logo-prueba-1.png" alt="" />
-                    <!-- poner logo del proyecto, o imagen por default  -->
                 </div>
             </div>
             <div class="buttonLogin">
@@ -17,16 +16,22 @@
         <div class="list">
             <div class="logoDesktop">
                 <a href="/"><img src="/img/logo-prueba-1.png" alt="" /></a>
-                <!-- poner logo del proyecto, o imagen por default  -->
             </div>
-            <ul class="navBurger">
-                <li><a href="/">Home</a></li>
-                <li><a href="/games">Partidos</a></li>
-                <!-- deberia llevar a la vista mi perfil  -->
-                <li><a href="/pitchs">Canchas</a></li>
-                <li><a href="/user/login">Ingreso</a></li>
-                <li><a href="/user/register">Registro</a></li>
-            </ul>
+            <% if (locals.isLogged) { %>
+
+                <ul class="navBurger">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/games">Partidos</a></li>
+                    <li><a href="/pitchs">Canchas</a></li>
+                    <li><a href="/user/profile">Mi Perfil</a></li>
+                </ul>
+                
+                <% } else { %>
+                <ul class="navBurger">
+                    <li><a href="/user/login">Ingreso</a></li>
+                    <li><a href="/user/register">Registro</a></li>
+                </ul>
+            <% } %>
         </div>
     </nav>
 </header>

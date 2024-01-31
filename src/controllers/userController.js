@@ -50,18 +50,15 @@ const controller = {
             if (user) {
                 delete user.password;
                 req.session.userLogged = user;
+
+                if (req.body.remember_me){
+                    res.cookie('userEmail', req.body.email,  { maxAge: (1000 * 60) * 2 });
+                }
                 return res.redirect('/user/profile');
             }
         } catch (error) {
             return res.status(500).send(error);
         }
-    //     req.session.user = {
-    //         timestamp: Date.now(),
-    //         id: user.id,
-    //         firstName: user.firstName,
-    //         email: user.email
-    //     }
-    //     return res.redirect('/users/profile')
     },
 
     // REGISTER
@@ -117,18 +114,12 @@ const controller = {
 
         // PROFILE 
         profile: (req, res) => {
-                return res.render('users/profile', {
+            console.log(req.cookies.userEmail);
+            
+            return res.render('users/profile', {
                     user: req.session.userLogged
                 });
             },
-        // async profile (req, res) {
-        // try {
-        //     const user = await db.User.findByPk(req.params.id);
-        //     res.render('users/profile', { user });
-        // } catch (error) {
-        //     res.status(500).send(error);
-        //     }
-        // },
 
         // EDIT
 
@@ -142,7 +133,6 @@ const controller = {
         },
 
         // UPDATE 
-
 
         async update(req, res) {
             try {
@@ -165,8 +155,8 @@ const controller = {
     }, 
 
         logout: (req, res) => {
+            res.clearCookie('userEmail');
             req.session.destroy();
-            console.log(req.session);
             return res.redirect('/');
         } 
     };
