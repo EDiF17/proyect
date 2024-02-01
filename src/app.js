@@ -6,7 +6,7 @@ const methodOverride =  require('method-override');
 const session = require("express-session");
 const cookieParser = require('cookie-parser');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-
+const cors = require("cors")
 // ************ Route System require ************
 const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/user');
@@ -34,7 +34,7 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(userLoggedMiddleware);
-
+app.use(cors());
 app.use('/', mainRoutes);
 app.use('/user', userRoutes);
 app.use('/pitchs', pitchsRoutes);
