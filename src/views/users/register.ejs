@@ -22,7 +22,6 @@
                     value="<%= locals.oldData ? oldData.first_name : null %>"
                     class="<%= locals.errors && errors.first_name ? 'is-invalid' : null  %>"
                     autocomplete="">
-                    
                     <% if (locals.errors && errors.first_name) { %>
                         <div style="color: red;">
                             <%= errors.first_name.msg %>
@@ -36,7 +35,6 @@
                     id="last_name" 
                     name="last_name" 
                     value="<%= locals.oldData ? oldData.last_name : null %>">
-                    
                     <% if (locals.errors && errors.last_name) { %>
                         <div style="color: red;">
                             <%= errors.last_name.msg %>
@@ -121,7 +119,7 @@
                 </div>
                 <div>
                     <label for="password">Contraseña</label><br>
-                    <input type="password" id="password" name="password" placeholder="">
+                    <input type="password" id="password" name="password">
                 </div>
                 <div >
                     <button type="reset" id="reset" class="button-Login">Borrar</button>
@@ -134,5 +132,4 @@
     <%- include("../partials/footer") %>
     <!-- /footer -->
 </body>
-
 </html>
